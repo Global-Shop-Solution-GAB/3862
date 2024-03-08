@@ -1,0 +1,2181 @@
+Program.Sub.ScreenSU.Start
+gui.formBOM..create
+gui.formBOM..caption("Bill of Material")
+gui.formBOM..size(25200,9705)
+gui.formBOM..minx(0)
+gui.formBOM..miny(0)
+gui.formBOM..position(0,0)
+gui.formBOM..event(resize,formbom_resize)
+gui.formBOM..event(unload,unload)
+gui.formBOM..alwaysontop(False)
+gui.formBOM..fontname("Arial")
+gui.formBOM..fontsize(8)
+gui.formBOM..forecolor(0)
+gui.formBOM..fontstyle(,,,,)
+gui.formBOM..BackColor(15790320)
+gui.formBOM..controlbox(True)
+gui.formBOM..maxbutton(True)
+gui.formBOM..minbutton(True)
+gui.formBOM..mousepointer(0)
+gui.formBOM..moveable(True)
+gui.formBOM..sizeable(True)
+gui.formBOM..ShowInTaskBar(True)
+gui.formBOM..titlebar(True)
+gui.formBOM.frmXML.create(frame)
+gui.formBOM.frmXML.caption("")
+gui.formBOM.frmXML.size(12285,8955)
+gui.formBOM.frmXML.position(90,60)
+gui.formBOM.frmXML.visible(True)
+gui.formBOM.frmXML.borderstyle(1)
+gui.formBOM.frmXML.fontname("Arial")
+gui.formBOM.frmXML.fontsize(7)
+gui.formBOM.frmGSS.create(frame)
+gui.formBOM.frmGSS.caption("")
+gui.formBOM.frmGSS.size(12285,8955)
+gui.formBOM.frmGSS.position(12510,60)
+gui.formBOM.frmGSS.visible(True)
+gui.formBOM.frmGSS.borderstyle(1)
+gui.formBOM.frmGSS.fontname("Arial")
+gui.formBOM.frmGSS.fontsize(7)
+gui.formBOM.frmSource.create(frame)
+gui.formBOM.frmSource.caption("Source Legend")
+gui.formBOM.frmSource.parent("frmxml")
+gui.formBOM.frmSource.size(6390,960)
+gui.formBOM.frmSource.position(5315,7815)
+gui.formBOM.frmSource.visible(True)
+gui.formBOM.frmSource.fontname("Arial")
+gui.formBOM.frmSource.fontsize(8)
+gui.formBOM.gsflexgrid1.create(gsflexgrid)
+gui.formBOM.gsflexgrid1.FixedRows(0)
+gui.formBOM.gsflexgrid1.FixedCols(0)
+gui.formBOM.gsflexgrid1.visible(True)
+gui.formBOM.gsflexgrid1.size(11595,6735)
+gui.formBOM.gsflexgrid1.zorder(0)
+gui.formBOM.gsflexgrid1.position(200,1050)
+gui.formBOM.gsflexgrid1.enabled(True)
+gui.formBOM.gsflexgrid1.parent("frmxml")
+gui.formBOM.gsflexgrid1.event(mousedown,gsflexgrid1_mousedown)
+gui.formBOM.gsflexgrid1.event(cellexit,gsflexgrid2_cellexit)
+gui.formBOM.txtParent.create(textbox,"",True,2670,300,0,200,345,False,0,Arial,7,16777215,1)
+gui.formBOM.txtParent.parent("frmxml")
+gui.formBOM.txtParent.defaultvalue("")
+gui.formBOM.txtParent.controlgroup(0)
+gui.formBOM.txtRev.create(textbox,"",True,780,300,0,3000,345,False,0,Arial,7,16777215,1)
+gui.formBOM.txtRev.parent("frmxml")
+gui.formBOM.txtRev.defaultvalue("")
+gui.formBOM.txtRev.controlgroup(0)
+gui.formBOM.txtDescription.create(textbox,"",True,4050,300,0,3915,345,False,0,Arial,7,16777215,1)
+gui.formBOM.txtDescription.parent("frmxml")
+gui.formBOM.txtDescription.defaultvalue("")
+gui.formBOM.txtDescription.controlgroup(0)
+gui.formBOM.lbl7.create(label,"Parent Number",True,1500,300,1,215,175,True,0,Arial,7,15790320,0)
+gui.formBOM.lbl7.parent("frmxml")
+gui.formBOM.lbl7.defaultvalue("")
+gui.formBOM.lbl7.controlgroup(0)
+gui.formBOM.lbl8.create(label,"Rev",True,735,300,1,3000,165,True,0,Arial,7,15790320,0)
+gui.formBOM.lbl8.parent("frmxml")
+gui.formBOM.lbl8.defaultvalue("")
+gui.formBOM.lbl8.controlgroup(0)
+gui.formBOM.lbl9.create(label,"Description",True,1500,300,1,3915,165,True,0,Arial,7,15790320,0)
+gui.formBOM.lbl9.parent("frmxml")
+gui.formBOM.lbl9.defaultvalue("")
+gui.formBOM.lbl9.controlgroup(0)
+gui.formBOM.lbl4.create(label,"Parent Number",True,1500,300,1,195,165,True,0,Arial,7,15790320,0)
+gui.formBOM.lbl4.parent("frmgss")
+gui.formBOM.lbl4.defaultvalue("")
+gui.formBOM.lbl4.controlgroup(0)
+gui.formBOM.lbl5.create(label,"Rev",True,735,300,1,3000,165,True,0,Arial,7,15790320,0)
+gui.formBOM.lbl5.parent("frmgss")
+gui.formBOM.lbl5.defaultvalue("")
+gui.formBOM.lbl5.controlgroup(0)
+gui.formBOM.lbl6.create(label,"Description",True,1500,300,1,3915,165,True,0,Arial,7,15790320,0)
+gui.formBOM.lbl6.parent("frmgss")
+gui.formBOM.lbl6.defaultvalue("")
+gui.formBOM.lbl6.controlgroup(0)
+gui.formBOM.txtGSSParent.create(textbox,"",True,2670,300,0,200,345,False,0,Arial,7,16777215,1)
+gui.formBOM.txtGSSParent.parent("frmgss")
+gui.formBOM.txtGSSParent.defaultvalue("")
+gui.formBOM.txtGSSParent.controlgroup(0)
+gui.formBOM.txtGSSRev.create(textbox,"",True,780,300,0,3000,345,False,0,Arial,7,16777215,1)
+gui.formBOM.txtGSSRev.parent("frmgss")
+gui.formBOM.txtGSSRev.defaultvalue("")
+gui.formBOM.txtGSSRev.controlgroup(0)
+gui.formBOM.txtGSSDesc.create(textbox,"",True,4050,300,0,3915,345,False,0,Arial,7,16777215,1)
+gui.formBOM.txtGSSDesc.parent("frmgss")
+gui.formBOM.txtGSSDesc.defaultvalue("")
+gui.formBOM.txtGSSDesc.controlgroup(0)
+gui.formBOM.gsflexgrid2.create(gsflexgrid)
+gui.formBOM.gsflexgrid2.FixedRows(0)
+gui.formBOM.gsflexgrid2.FixedCols(0)
+gui.formBOM.gsflexgrid2.visible(True)
+gui.formBOM.gsflexgrid2.size(11595,6735)
+gui.formBOM.gsflexgrid2.zorder(0)
+gui.formBOM.gsflexgrid2.position(200,1020)
+gui.formBOM.gsflexgrid2.enabled(True)
+gui.formBOM.gsflexgrid2.parent("frmgss")
+gui.formBOM.cmdLoad.create(button)
+gui.formBOM.cmdLoad.caption("Load")
+gui.formBOM.cmdLoad.visible(True)
+gui.formBOM.cmdLoad.size(1290,375)
+gui.formBOM.cmdLoad.zorder(0)
+gui.formBOM.cmdLoad.position(200,8315)
+gui.formBOM.cmdLoad.enabled(True)
+gui.formBOM.cmdLoad.parent("frmxml")
+gui.formBOM.cmdLoad.fontname("Arial")
+gui.formBOM.cmdLoad.fontsize(8)
+gui.formBOM.cmdLoad.event(click,cmdLoad_Click)
+gui.formBOM.cmdLoad.defaultvalue("")
+gui.formBOM.cmdLoad.controlgroup(0)
+gui.formBOM.cmdRefresh.create(button)
+gui.formBOM.cmdRefresh.caption("Refresh")
+gui.formBOM.cmdRefresh.visible(True)
+gui.formBOM.cmdRefresh.size(1290,375)
+gui.formBOM.cmdRefresh.zorder(0)
+gui.formBOM.cmdRefresh.position(1625,8315)
+gui.formBOM.cmdRefresh.enabled(True)
+gui.formBOM.cmdRefresh.parent("frmxml")
+gui.formBOM.cmdRefresh.fontname("Arial")
+gui.formBOM.cmdRefresh.fontsize(8)
+gui.formBOM.cmdRefresh.event(click,cmdrefresh_click)
+gui.formBOM.cmdRefresh.defaultvalue("")
+gui.formBOM.cmdRefresh.controlgroup(0)
+gui.formBOM.txtDisc.create(textbox,"",True,675,210,0,200,7910,False,0,Arial,8,-2147483643,1)
+gui.formBOM.txtDisc.parent("frmxml")
+gui.formBOM.txtDisc.defaultvalue("")
+gui.formBOM.txtDisc.controlgroup(0)
+gui.formBOM.lbl11.create(label,"Line Discrepancy",True,2685,225,1,940,7910,True,0,Arial,8,-2147483633,0)
+gui.formBOM.lbl11.parent("frmxml")
+gui.formBOM.lbl11.defaultvalue("")
+gui.formBOM.lbl11.controlgroup(0)
+gui.formBOM.txtNonInv.create(textbox,"",True,675,210,0,3000,7910,False,0,Arial,8,-2147483643,1)
+gui.formBOM.txtNonInv.parent("frmxml")
+gui.formBOM.txtNonInv.defaultvalue("")
+gui.formBOM.txtNonInv.controlgroup(0)
+gui.formBOM.lbl12.create(label,"Non Inventory Part",True,2685,225,1,3770,7910,True,0,Arial,8,-2147483633,0)
+gui.formBOM.lbl12.parent("frmxml")
+gui.formBOM.lbl12.defaultvalue("")
+gui.formBOM.lbl12.controlgroup(0)
+gui.formBOM.cmdCreatePrts.create(button)
+gui.formBOM.cmdCreatePrts.caption("Create Parts")
+gui.formBOM.cmdCreatePrts.visible(True)
+gui.formBOM.cmdCreatePrts.size(1290,375)
+gui.formBOM.cmdCreatePrts.zorder(0)
+gui.formBOM.cmdCreatePrts.position(3035,8315)
+gui.formBOM.cmdCreatePrts.enabled(True)
+gui.formBOM.cmdCreatePrts.parent("frmxml")
+gui.formBOM.cmdCreatePrts.fontname("Arial")
+gui.formBOM.cmdCreatePrts.fontsize(8)
+gui.formBOM.cmdCreatePrts.event(click,cmdcreateprts_click)
+gui.formBOM.cmdCreatePrts.defaultvalue("")
+gui.formBOM.cmdCreatePrts.controlgroup(0)
+gui.formBOM.lbl13.create(label,"Design Bill of Material",True,2985,300,1,200,745,True,0,Arial,10,-2147483633,0)
+gui.formBOM.lbl13.parent("frmxml")
+gui.formBOM.lbl13.fontstyle(True,False,False,False)
+gui.formBOM.lbl13.defaultvalue("")
+gui.formBOM.lbl13.controlgroup(0)
+gui.formBOM.lbl14.create(label,"Global Shop Bill Of Material",True,2865,300,1,200,745,True,0,Arial,10,-2147483633,0)
+gui.formBOM.lbl14.parent("frmgss")
+gui.formBOM.lbl14.fontstyle(True,False,False,False)
+gui.formBOM.lbl14.defaultvalue("")
+gui.formBOM.lbl14.controlgroup(0)
+gui.formBOM.lbl15.create(label,"M = Manufacture To Stock",True,1935,255,1,200,260,True,0,Arial,8,-2147483633,0)
+gui.formBOM.lbl15.parent("frmsource")
+gui.formBOM.lbl15.defaultvalue("")
+gui.formBOM.lbl15.controlgroup(0)
+gui.formBOM.lbl16.create(label,"F = Manufacture To Job",True,1935,255,1,215,580,True,0,Arial,8,-2147483633,0)
+gui.formBOM.lbl16.parent("frmsource")
+gui.formBOM.lbl16.defaultvalue("")
+gui.formBOM.lbl16.controlgroup(0)
+gui.formBOM.lbl17.create(label,"P = Purchase To Stock",True,1935,255,1,2290,260,True,0,Arial,8,-2147483633,0)
+gui.formBOM.lbl17.parent("frmsource")
+gui.formBOM.lbl17.defaultvalue("")
+gui.formBOM.lbl17.controlgroup(0)
+gui.formBOM.lbl18.create(label,"J = Purchase To Job",True,1935,255,1,2290,580,True,0,Arial,8,-2147483633,0)
+gui.formBOM.lbl18.parent("frmsource")
+gui.formBOM.lbl18.defaultvalue("")
+gui.formBOM.lbl18.controlgroup(0)
+gui.formBOM.lbl19.create(label,"C = Consigned To Stock",True,1935,255,1,4115,260,True,0,Arial,8,-2147483633,0)
+gui.formBOM.lbl19.parent("frmsource")
+gui.formBOM.lbl19.defaultvalue("")
+gui.formBOM.lbl19.controlgroup(0)
+gui.formBOM.lbl20.create(label,"G = consigned To Job",True,1935,255,1,4115,580,True,0,Arial,8,-2147483633,0)
+gui.formBOM.lbl20.parent("frmsource")
+gui.formBOM.lbl20.defaultvalue("")
+gui.formBOM.lbl20.controlgroup(0)
+gui.formBOM.lbl21.create(label,"Label",True,1935,255,1,200,200,True,0,Arial,8,-2147483633,0)
+gui.formBOM.lbl21.defaultvalue("")
+gui.formBOM.lbl21.controlgroup(0)
+gui.formBOM.lbl22.create(label,"UM",True,345,255,1,8110,200,True,0,Arial,7,-2147483633,0)
+gui.formBOM.lbl22.parent("frmxml")
+gui.formBOM.lbl22.defaultvalue("")
+gui.formBOM.lbl22.controlgroup(0)
+gui.formBOM.txtUM.create(textbox,"",True,405,300,0,8100,345,False,0,Arial,8,-2147483643,1)
+gui.formBOM.txtUM.parent("frmxml")
+gui.formBOM.txtUM.defaultvalue("")
+gui.formBOM.txtUM.controlgroup(0)
+gui.formBOM.lbl23.create(label,"Cat",True,300,255,1,8630,200,True,0,Arial,7,-2147483633,0)
+gui.formBOM.lbl23.parent("frmxml")
+gui.formBOM.lbl23.defaultvalue("")
+gui.formBOM.lbl23.controlgroup(0)
+gui.formBOM.txtCat.create(textbox,"",True,375,300,0,8615,345,True,0,Arial,8,-2147483643,1)
+gui.formBOM.txtCat.parent("frmxml")
+gui.formBOM.txtCat.event(gotfocus,txtcat_gotfocus)
+gui.formBOM.txtCat.defaultvalue("")
+gui.formBOM.txtCat.controlgroup(0)
+gui.formBOM.lbl24.create(label,"Sc",True,210,255,1,9100,190,True,0,Arial,7,-2147483633,0)
+gui.formBOM.lbl24.parent("frmxml")
+gui.formBOM.lbl24.defaultvalue("")
+gui.formBOM.lbl24.controlgroup(0)
+gui.formBOM.txtSc.create(textbox,"",True,405,300,0,9085,345,True,0,Arial,8,-2147483643,1)
+gui.formBOM.txtSc.parent("frmxml")
+gui.formBOM.txtSc.event(gotfocus,txtcat_gotfocus)
+gui.formBOM.txtSc.defaultvalue("")
+gui.formBOM.txtSc.controlgroup(0)
+gui.formBOM.lbl25.create(label,"PL",True,210,255,1,9620,190,True,0,Arial,7,-2147483633,0)
+gui.formBOM.lbl25.parent("frmxml")
+gui.formBOM.lbl25.defaultvalue("")
+gui.formBOM.lbl25.controlgroup(0)
+gui.formBOM.txtPL.create(textbox,"",True,435,300,0,9600,345,True,0,Arial,8,-2147483643,1)
+gui.formBOM.txtPL.parent("frmxml")
+gui.formBOM.txtPL.event(gotfocus,txtcat_gotfocus)
+gui.formBOM.txtPL.defaultvalue("")
+gui.formBOM.txtPL.controlgroup(0)
+gui.formBOM.txtGSSUM.create(textbox,"",True,405,300,0,8100,345,False,0,Arial,8,-2147483643,1)
+gui.formBOM.txtGSSUM.parent("frmgss")
+gui.formBOM.txtGSSUM.defaultvalue("")
+gui.formBOM.txtGSSUM.controlgroup(0)
+gui.formBOM.lbl26.create(label,"UM",True,345,255,1,8095,195,True,0,Arial,7,-2147483633,0)
+gui.formBOM.lbl26.parent("frmgss")
+gui.formBOM.lbl26.defaultvalue("")
+gui.formBOM.lbl26.controlgroup(0)
+gui.formBOM.txtGSSCat.create(textbox,"",True,375,300,0,8615,345,False,0,Arial,8,-2147483643,1)
+gui.formBOM.txtGSSCat.parent("frmgss")
+gui.formBOM.txtGSSCat.defaultvalue("")
+gui.formBOM.txtGSSCat.controlgroup(0)
+gui.formBOM.lbl27.create(label,"Cat",True,300,255,1,8630,190,True,0,Arial,7,-2147483633,0)
+gui.formBOM.lbl27.parent("frmgss")
+gui.formBOM.lbl27.defaultvalue("")
+gui.formBOM.lbl27.controlgroup(0)
+gui.formBOM.txtGSSSc.create(textbox,"",True,405,300,0,9100,345,False,0,Arial,8,-2147483643,1)
+gui.formBOM.txtGSSSc.parent("frmgss")
+gui.formBOM.txtGSSSc.defaultvalue("")
+gui.formBOM.txtGSSSc.controlgroup(0)
+gui.formBOM.lbl28.create(label,"Sc",True,210,255,1,9115,190,True,0,Arial,7,-2147483633,0)
+gui.formBOM.lbl28.parent("frmgss")
+gui.formBOM.lbl28.defaultvalue("")
+gui.formBOM.lbl28.controlgroup(0)
+gui.formBOM.txtGSSPL.create(textbox,"",True,435,300,0,9650,345,False,0,Arial,8,-2147483643,1)
+gui.formBOM.txtGSSPL.parent("frmgss")
+gui.formBOM.txtGSSPL.defaultvalue("")
+gui.formBOM.txtGSSPL.controlgroup(0)
+gui.formBOM.lbl29.create(label,"PL",True,210,255,1,9675,200,True,0,Arial,7,-2147483633,0)
+gui.formBOM.lbl29.parent("frmgss")
+gui.formBOM.lbl29.defaultvalue("")
+gui.formBOM.lbl29.controlgroup(0)
+gui.formBOM.txtParent.tabstop(True)
+gui.formBOM.txtParent.tabindex(11)
+gui.formBOM.txtRev.tabstop(True)
+gui.formBOM.txtRev.tabindex(12)
+gui.formBOM.txtDescription.tabstop(True)
+gui.formBOM.txtDescription.tabindex(13)
+gui.formBOM.txtGSSParent.tabstop(True)
+gui.formBOM.txtGSSParent.tabindex(24)
+gui.formBOM.txtGSSRev.tabstop(True)
+gui.formBOM.txtGSSRev.tabindex(25)
+gui.formBOM.txtGSSDesc.tabstop(True)
+gui.formBOM.txtGSSDesc.tabindex(26)
+
+
+gui.FormXML..create
+gui.FormXML..caption("Bill of Material")
+gui.FormXML..size(25200,9705)
+gui.FormXML..minx(0)
+gui.FormXML..miny(0)
+gui.FormXML..position(0,0)
+gui.FormXML..event(resize,FormXML_resize)
+gui.FormXML..event(unload,Unload)
+gui.FormXML..alwaysontop(False)
+gui.FormXML..fontname("Arial")
+gui.FormXML..fontsize(8)
+gui.FormXML..forecolor(0)
+gui.FormXML..fontstyle(,,,,)
+gui.FormXML..BackColor(15790320)
+gui.FormXML..controlbox(True)
+gui.FormXML..maxbutton(True)
+gui.FormXML..minbutton(True)
+gui.FormXML..mousepointer(0)
+gui.FormXML..moveable(True)
+gui.FormXML..sizeable(True)
+gui.FormXML..ShowInTaskBar(True)
+gui.FormXML..titlebar(True)
+gui.FormXML.frame1.create(frame)
+gui.FormXML.frame1.caption("")
+gui.FormXML.frame1.size(11865,9045)
+gui.FormXML.frame1.position(105,45)
+gui.FormXML.frame1.visible(True)
+gui.FormXML.frame1.fontname("Arial")
+gui.FormXML.frame1.fontsize(8)
+gui.FormXML.frmSource.create(frame)
+gui.FormXML.frmSource.caption("Source Legend")
+gui.FormXML.frmSource.parent("frame1")
+gui.FormXML.frmSource.size(6390,960)
+gui.FormXML.frmSource.position(5315,7818)
+gui.FormXML.frmSource.visible(True)
+gui.FormXML.frmSource.fontname("Arial")
+gui.FormXML.frmSource.fontsize(8)
+gui.FormXML.gsflexgrid1.create(gsflexgrid)
+gui.FormXML.gsflexgrid1.FixedRows(0)
+gui.FormXML.gsflexgrid1.FixedCols(0)
+gui.FormXML.gsflexgrid1.visible(True)
+gui.FormXML.gsflexgrid1.size(11595,6735)
+gui.FormXML.gsflexgrid1.zorder(0)
+gui.FormXML.gsflexgrid1.position(200,1025)
+gui.FormXML.gsflexgrid1.enabled(True)
+gui.FormXML.gsflexgrid1.parent("frame1")
+gui.FormXML.gsflexgrid1.event(mousedown,gsflexgrid1_mousedown)
+gui.FormXML.gsflexgrid1.event(cellexit,gsflexgrid2_cellexit)
+gui.FormXML.cmdLoad.create(button)
+gui.FormXML.cmdLoad.caption("Load")
+gui.FormXML.cmdLoad.visible(True)
+gui.FormXML.cmdLoad.size(1335,375)
+gui.FormXML.cmdLoad.zorder(0)
+gui.FormXML.cmdLoad.position(200,8400)
+gui.FormXML.cmdLoad.enabled(True)
+gui.FormXML.cmdLoad.parent("frame1")
+gui.FormXML.cmdLoad.fontname("Arial")
+gui.FormXML.cmdLoad.fontsize(7)
+gui.FormXML.cmdLoad.event(click,cmdLoad_Click)
+gui.FormXML.cmdLoad.defaultvalue("")
+gui.FormXML.cmdLoad.controlgroup(0)
+gui.FormXML.txtParent.create(textbox,"",True,2670,300,0,200,350,False,0,Arial,7,16777215,1)
+gui.FormXML.txtParent.parent("frame1")
+gui.FormXML.txtParent.defaultvalue("")
+gui.FormXML.txtParent.controlgroup(0)
+gui.FormXML.txtRev.create(textbox,"",True,780,300,0,2945,350,False,0,Arial,7,16777215,1)
+gui.FormXML.txtRev.parent("frame1")
+gui.FormXML.txtRev.defaultvalue("")
+gui.FormXML.txtRev.controlgroup(0)
+gui.FormXML.txtDescription.create(textbox,"",True,4050,300,0,3815,350,False,0,Arial,7,16777215,1)
+gui.FormXML.txtDescription.parent("frame1")
+gui.FormXML.txtDescription.defaultvalue("")
+gui.FormXML.txtDescription.controlgroup(0)
+gui.FormXML.lbl7.create(label,"Parent Number",True,1500,225,1,200,185,True,0,Arial,7,15790320,0)
+gui.FormXML.lbl7.parent("frame1")
+gui.FormXML.lbl7.defaultvalue("")
+gui.FormXML.lbl7.controlgroup(0)
+gui.FormXML.lbl8.create(label,"Rev",True,735,225,1,2945,185,True,0,Arial,7,15790320,0)
+gui.FormXML.lbl8.parent("frame1")
+gui.FormXML.lbl8.defaultvalue("")
+gui.FormXML.lbl8.controlgroup(0)
+gui.FormXML.lbl9.create(label,"Description",True,1500,225,1,3815,185,True,0,Arial,7,15790320,0)
+gui.FormXML.lbl9.parent("frame1")
+gui.FormXML.lbl9.defaultvalue("")
+gui.FormXML.lbl9.controlgroup(0)
+gui.FormXML.txtNonInv.create(textbox,"",True,765,195,0,175,7965,True,0,Arial,8,-2147483643,1)
+gui.FormXML.txtNonInv.parent("frame1")
+gui.FormXML.txtNonInv.defaultvalue("")
+gui.FormXML.txtNonInv.controlgroup(0)
+gui.FormXML.lbl4.create(label,"Non Inventory Part",True,1935,195,1,1055,7965,True,0,Arial,8,-2147483633,0)
+gui.FormXML.lbl4.parent("frame1")
+gui.FormXML.lbl4.defaultvalue("")
+gui.FormXML.lbl4.controlgroup(0)
+gui.FormXML.cmdCreatePrt.create(button)
+gui.FormXML.cmdCreatePrt.caption("Create Parts")
+gui.FormXML.cmdCreatePrt.visible(True)
+gui.FormXML.cmdCreatePrt.size(1335,375)
+gui.FormXML.cmdCreatePrt.zorder(0)
+gui.FormXML.cmdCreatePrt.position(3115,8400)
+gui.FormXML.cmdCreatePrt.enabled(True)
+gui.FormXML.cmdCreatePrt.parent("frame1")
+gui.FormXML.cmdCreatePrt.fontname("Arial")
+gui.FormXML.cmdCreatePrt.fontsize(8)
+gui.FormXML.cmdCreatePrt.event(click,cmdcreateprts_click)
+gui.FormXML.cmdCreatePrt.defaultvalue("")
+gui.FormXML.cmdCreatePrt.controlgroup(0)
+gui.FormXML.cmdRefresh.create(button)
+gui.FormXML.cmdRefresh.caption("Refresh")
+gui.FormXML.cmdRefresh.visible(True)
+gui.FormXML.cmdRefresh.size(1335,375)
+gui.FormXML.cmdRefresh.zorder(0)
+gui.FormXML.cmdRefresh.position(1650,8400)
+gui.FormXML.cmdRefresh.enabled(True)
+gui.FormXML.cmdRefresh.parent("frame1")
+gui.FormXML.cmdRefresh.fontname("Arial")
+gui.FormXML.cmdRefresh.fontsize(8)
+gui.FormXML.cmdRefresh.event(click,cmdrefresh_click)
+gui.FormXML.cmdRefresh.defaultvalue("")
+gui.FormXML.cmdRefresh.controlgroup(0)
+gui.FormXML.lbl5.create(label,"Design Bill of Material",True,2400,255,1,200,715,True,0,Arial,10,-2147483633,0)
+gui.FormXML.lbl5.parent("frame1")
+gui.FormXML.lbl5.fontstyle(True,False,False,False)
+gui.FormXML.lbl5.defaultvalue("")
+gui.FormXML.lbl5.controlgroup(0)
+gui.FormXML.lbl6.create(label,"M = Manufacture To Stock",True,1935,255,1,200,260,True,0,Arial,8,-2147483633,0)
+gui.FormXML.lbl6.parent("frmsource")
+gui.FormXML.lbl6.defaultvalue("")
+gui.FormXML.lbl6.controlgroup(0)
+gui.FormXML.lbl10.create(label,"F = Manufacture To Job",True,1935,255,1,215,580,True,0,Arial,8,-2147483633,0)
+gui.FormXML.lbl10.parent("frmsource")
+gui.FormXML.lbl10.defaultvalue("")
+gui.FormXML.lbl10.controlgroup(0)
+gui.FormXML.lbl11.create(label,"P = Purchase To Stock",True,2280,270,1,2290,260,True,0,Arial,8,-2147483633,0)
+gui.FormXML.lbl11.parent("frmsource")
+gui.FormXML.lbl11.defaultvalue("")
+gui.FormXML.lbl11.controlgroup(0)
+gui.FormXML.lbl12.create(label,"J = Purchase To Job",True,1935,255,1,2290,580,True,0,Arial,8,-2147483633,0)
+gui.FormXML.lbl12.parent("frmsource")
+gui.FormXML.lbl12.defaultvalue("")
+gui.FormXML.lbl12.controlgroup(0)
+gui.FormXML.lbl13.create(label,"C = Consigned To Stock",True,1935,255,1,4115,260,True,0,Arial,8,-2147483633,0)
+gui.FormXML.lbl13.parent("frmsource")
+gui.FormXML.lbl13.defaultvalue("")
+gui.FormXML.lbl13.controlgroup(0)
+gui.FormXML.lbl14.create(label,"G = Consigned To Job",True,1935,255,1,4115,580,True,0,Arial,8,-2147483633,0)
+gui.FormXML.lbl14.parent("frmsource")
+gui.FormXML.lbl14.defaultvalue("")
+gui.FormXML.lbl14.controlgroup(0)
+gui.FormXML.txtXMLUM.create(textbox,"",True,405,300,0,8000,345,False,0,Arial,8,-2147483643,1)
+gui.FormXML.txtXMLUM.parent("frame1")
+gui.FormXML.txtXMLUM.defaultvalue("")
+gui.FormXML.txtXMLUM.controlgroup(0)
+gui.FormXML.lbl15.create(label,"UM",True,330,255,1,8015,190,True,0,Arial,7,-2147483633,0)
+gui.FormXML.lbl15.parent("frame1")
+gui.FormXML.lbl15.defaultvalue("")
+gui.FormXML.lbl15.controlgroup(0)
+gui.FormXML.lbl16.create(label,"Cat",True,270,255,1,8500,200,True,0,Arial,7,-2147483633,0)
+gui.FormXML.lbl16.parent("frame1")
+gui.FormXML.lbl16.defaultvalue("")
+gui.FormXML.lbl16.controlgroup(0)
+gui.FormXML.txtCat.create(textbox,"",True,375,300,0,8500,345,True,0,Arial,8,-2147483643,1)
+gui.FormXML.txtCat.parent("frame1")
+gui.FormXML.txtCat.event(gotfocus,txtcat_gotfocus)
+gui.FormXML.txtCat.defaultvalue("")
+gui.FormXML.txtCat.controlgroup(0)
+gui.FormXML.lbl17.create(label,"Sc",True,330,255,1,9050,200,True,0,Arial,7,-2147483633,0)
+gui.FormXML.lbl17.parent("frame1")
+gui.FormXML.lbl17.defaultvalue("")
+gui.FormXML.lbl17.controlgroup(0)
+gui.FormXML.txtSc.create(textbox,"",True,405,300,0,9000,345,True,0,Arial,8,-2147483643,1)
+gui.FormXML.txtSc.parent("frame1")
+gui.FormXML.txtSc.event(gotfocus,txtcat_gotfocus)
+gui.FormXML.txtSc.defaultvalue("")
+gui.FormXML.txtSc.controlgroup(0)
+gui.FormXML.lbl18.create(label,"PL",True,240,255,1,9545,200,True,0,Arial,7,-2147483633,0)
+gui.FormXML.lbl18.parent("frame1")
+gui.FormXML.lbl18.defaultvalue("")
+gui.FormXML.lbl18.controlgroup(0)
+gui.FormXML.txtPL.create(textbox,"",True,375,300,0,9515,345,True,0,Arial,8,-2147483643,1)
+gui.FormXML.txtPL.parent("frame1")
+gui.FormXML.txtPL.event(gotfocus,txtcat_gotfocus)
+gui.FormXML.txtPL.defaultvalue("")
+gui.FormXML.txtPL.controlgroup(0)
+gui.FormXML.cmdLoad.tabstop(True)
+gui.FormXML.cmdLoad.tabindex(1)
+gui.FormXML.txtParent.tabstop(True)
+gui.FormXML.txtParent.tabindex(11)
+gui.FormXML.txtRev.tabstop(True)
+gui.FormXML.txtRev.tabindex(12)
+gui.FormXML.txtDescription.tabstop(True)
+gui.FormXML.txtDescription.tabindex(13)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.UDT.uViewCopy.Define("Parent",String)
+Variable.UDT.uViewCopy.Define("Sequence",String)
+Variable.UDT.uViewCopy.Define("PartNo",String)
+Variable.UDT.uViewCopy.Define("Description",String)
+Variable.UDT.uViewCopy.Define("UM",String)
+Variable.UDT.uViewCopy.Define("Count",String)
+Variable.UDT.uViewCopy.Define("Level",String)
+Variable.UDT.uViewCopy.Define("DocumentNumber",String)
+Variable.UDT.uViewCopy.Define("Title",String)
+Variable.UDT.uViewCopy.Define("Revision",String)
+Variable.UDT.uViewCopy.Define("Material",String)
+Variable.UDT.uViewCopy.Define("Length",String)
+Variable.UDT.uViewCopy.Define("Width",String)
+Variable.UDT.uViewCopy.Define("RawStock",String)
+Variable.UDT.uViewCopy.Define("Category",String)
+Variable.UDT.uViewCopy.Define("Source",String)
+Variable.UDT.uViewCopy.Define("PropertyCode",String)
+Variable.UDT.uViewCopy.Define("Dim1",float)
+Variable.UDT.uViewCopy.Define("Dim2",float)
+Variable.UDT.uViewCopy.Define("Workcenter",String)
+Variable.UDT.uViewCopy.Define("EstUmUnit",String)
+Variable.UDT.uViewCopy.Define("IsParent",String)
+Variable.UDT.uViewCopy.Define("IsProcessed",Boolean)
+Variable.UDT.uViewCopy.Define("ViewSeq",long)
+Variable.UDT.uViewCopy.Define("PrtLevel",String)
+Variable.UDT.uViewCopy.Define("PrtParent",String)
+Variable.UDT.uViewCopy.Define("NonInv",String)
+Variable.UDT.uViewCopy.Define("RtrTempl",String)
+Variable.UDT.uViewCopy.Define("AltDesc1",String)
+Variable.UDT.uViewCopy.Define("AltDesc2",String)
+Variable.UDT.uViewCopy.Define("ProdLine",String)
+Variable.uGlobal.uViewCopy.Declare("uViewCopy")
+
+Variable.UDT.uBOM.Define("Parent",String)
+Variable.UDT.uBOM.Define("Sequence",String)
+Variable.UDT.uBOM.Define("PartNo",String)
+Variable.UDT.uBOM.Define("Description",String)
+Variable.UDT.uBOM.Define("UM",String)
+Variable.UDT.uBOM.Define("Count",String)
+Variable.UDT.uBOM.Define("Level",String)
+Variable.UDT.uBOM.Define("DocumentNumber",String)
+Variable.UDT.uBOM.Define("Title",String)
+Variable.UDT.uBOM.Define("Revision",String)
+Variable.UDT.uBOM.Define("Material",String)
+Variable.UDT.uBOM.Define("Length",String)
+Variable.UDT.uBOM.Define("Width",String)
+Variable.UDT.uBOM.Define("RawStock",String)
+Variable.UDT.uBOM.Define("Category",String)
+Variable.UDT.uBOM.Define("Source",String)
+Variable.UDT.uBOM.Define("PropertyCode",String)
+Variable.UDT.uBOM.Define("Dim1",float)
+Variable.UDT.uBOM.Define("Dim2",float)
+Variable.UDT.uBOM.Define("Workcenter",String)
+Variable.UDT.uBOM.Define("EstUmUnit",String)
+Variable.UDT.uBOM.Define("IsParent",String)
+Variable.UDT.uBOM.Define("IsProcessed",Boolean)
+Variable.UDT.uBOM.Define("ViewSeq",long)
+Variable.UDT.uBOM.Define("PrtLevel",String)
+Variable.UDT.uBOM.Define("PrtParent",String)
+Variable.UDT.uBOM.Define("NonInv",String)
+Variable.UDT.uBOM.Define("RtrTempl",String)
+Variable.UDT.uBOM.Define("AltDesc1",String)
+Variable.UDT.uBOM.Define("AltDesc2",String)
+Variable.UDT.uBOM.Define("ProdLine",String)
+Variable.uGlobal.uBOM.Declare("uBOM")
+
+Variable.UDT.uGSS.Define("Line",String)
+Variable.UDT.uGSS.Define("Seq",String)
+Variable.UDT.uGSS.Define("Part",String)
+Variable.UDT.uGSS.Define("Description",String)
+Variable.UDT.uGSS.Define("UM",String)
+Variable.UDT.uGSS.Define("Cat",String)
+Variable.UDT.uGSS.Define("Source",String)
+Variable.UDT.uGSS.Define("Qty",String)
+Variable.UDT.uGSS.Define("OnHand",String)
+Variable.UDT.uGSS.Define("OnOrder",String)
+Variable.UDT.uGSS.Define("Required",String)
+Variable.UDT.uGSS.Define("Net",String)
+Variable.UDT.uGSS.Define("RtrNet",String)
+Variable.UDT.uGSS.Define("Parent",String)
+Variable.UDT.uGSS.Define("LdHrs",String)
+Variable.UDT.uGSS.Define("LdDate",String)
+Variable.UDT.uGSS.Define("ISParent",String)
+Variable.UDT.uGSS.Define("filler",String)
+Variable.UDT.uGSS.Define("NonInv",String)
+Variable.UDT.uGSS.Define("RtrTempl",String)
+Variable.UDT.uGSS.Define("ProdLine",String)
+Variable.uGlobal.uGSS.Declare("uGSS")
+
+Variable.Global.sNewLevel.Declare(String)
+Variable.Global.bBOMExists.Declare(Boolean,false)
+Variable.Global.bBOMExploded.Declare(Boolean,false)
+Variable.Global.iScreenHeight.Declare(Long,9480)
+Variable.Global.iScreenWidth.Declare(Long,25170)
+Variable.Global.sPart.Declare(String)
+Variable.Global.iColumn.Declare(Long,0)
+Variable.Global.iRow.Declare(Long,0)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'/================================================
+' JCT
+' read file for BOM components.
+' create and/or update BOM and BOM_Cutlist
+'================================================/
+
+' open odbc connection
+F.ODBC.Connection!Con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+' the create router is not functioning, so it will be disabled
+
+F.Intrinsic.Control.CallSub(Selectfile)
+' read the xml file
+
+F.Intrinsic.Control.CallSub(Readxml,"FILE",V.Args.FILE)
+
+' see if there is an existing BOM
+F.Intrinsic.Control.CallSub(Explodebom)
+' filter the data
+F.Intrinsic.Control.CallSub(Filterdata)
+' load screen
+F.Intrinsic.UI.CloseWaitDialog
+F.Intrinsic.Control.CallSub(Fillxmlgrid)
+' compare the 2 grid details.  differences will be flagged
+F.Intrinsic.Control.CallSub(Compare)
+' if existing BOM was not found, show single grid form
+F.Intrinsic.Control.If(V.uGlobal.uGSS!Parent.UBound,=,-1)
+	Gui.formXML.txtNonInv.BackColor(V.Color.Yellow)
+	Gui.FormXML..WindowState(2)
+	Gui.FormXML..Show
+F.Intrinsic.Control.Else
+	Gui.formBOM.txtDisc.BackColor(V.Color.LtRed)
+	Gui.formBOM.txtNonInv.BackColor(V.Color.Yellow)
+	Gui.formBOM..WindowState(2)
+	Gui.formBOM..Show
+F.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+Program.Sub.readXML.Start
+' \=================================
+' XML file will have structure:
+' <Table 	
+' <TableName/>
+' <Rows <Row <Values <NameValuePair <Name/><Value/>
+' /> /> /> />
+' <Info <NameValuePair <Name/><Value/>
+' /> />
+' />
+
+' load all XML ValuePairs to a udt.
+' we will read where Rows\Row\Values]NameValuePair\Names are:
+' Parent, Sequence, PartNo, Count, Level, Description, Revision, Stock Number, Title
+' ================================\
+F.Intrinsic.Control.SetErrorHandler("readXML_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sQuery.Declare(String,"//Rows/Row/Values/NameValuePair")
+V.Local.sName.Declare(String)
+V.Local.bEOF.Declare(Boolean,False)
+V.Local.iUB.Declare(Long,-1)
+V.Local.sVal.Declare(String)
+V.Local.sDoc.Declare(String,"BOM")
+V.Local.sNS.Declare(String,"Rows")
+V.Local.sMsg.Declare(String)
+V.Local.sSel.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.bAddNewLevel.Declare(Boolean,False)
+V.Local.sNewPrtLevel.Declare(String)
+V.Local.sNewLine.Declare(String)
+V.Local.sNewParent.Declare(String)
+V.Local.sNewPart.Declare(String)
+V.Local.sNewDescription.Declare(String)
+V.Local.sNewSource.Declare(String)
+V.Local.sNewLevel.Declare(String)
+V.Local.iNewLevel.Declare(Long)
+V.Local.iNewSeq.Declare(Long)
+V.Local.sNewPrtLev.Declare(String)
+V.local.sNewCount.Declare(String)
+V.Local.sNewUM.Declare(String)
+V.Local.sNode.Declare(String)
+V.Local.fHold.Declare(Float)
+
+V.Local.sRawStock.Declare(String)
+V.Local.sNewWorkcenter.Declare(String)
+
+F.Intrinsic.UI.InvokeWaitDialog("Reading import file","Design Interface")
+' read the file.
+F.Global.XML.LoadDocument(V.Local.sDoc,V.Args.FILE,False,False,False,False)
+' clear UDT
+V.uGlobal.uBOM.Redim(-1,-1)
+
+V.Local.sNode.Redim(0,1)
+V.Local.sNode(0).set("Node-S0")
+
+F.Global.XML.Query(V.Local.sDoc,V.Local.sNS,V.Local.sQuery,False)
+F.Intrinsic.Control.DoUntil(V.Local.bEOF,=,True)
+	F.Global.XML.ReadNodeSetValue(V.Local.sDoc,V.Local.sNS,"text",V.Local.sRet)
+
+	F.Intrinsic.String.Split(V.Local.sRet," ",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.UBound,>,1,"AND",V.Local.sRet(0).UCase,=,"PROJECTINFORMATION.DOCUMENT")
+		F.Intrinsic.String.Build("{0} {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sRet(1))
+		F.Intrinsic.Variable.PopArray(V.Local.sRet,V.Local.sRet)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRet.UBound,>,1,"AND",V.Local.sRet(0),=,"Alt")
+		F.Intrinsic.String.Build("{0} {1} {2}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sRet(2),V.Local.sRet(2))
+		F.Intrinsic.Variable.PopArray(V.Local.sRet,V.Local.sRet)
+		F.Intrinsic.Variable.PopArray(V.Local.sRet,V.Local.sRet)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sRet.UBound,>,1,"AND",V.Local.sRet(0),=,"Prod")
+		F.Intrinsic.String.Build("{0} {1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sRet(1))
+		F.Intrinsic.Variable.PopArray(V.Local.sRet,V.Local.sRet)
+	F.Intrinsic.Control.EndIf
+
+	V.Local.sName.Set(V.Local.sRet(0))
+	F.Intrinsic.Control.If(V.Local.sName.Ucase,=,"PARENT")
+		F.Intrinsic.Control.If(V.Local.iUB,=,-1)
+			V.Local.iUB.Set(0)
+			V.uGlobal.uBOM.Redim(0,0)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.uGlobal.uBOM!Parent.UBound,1,V.Local.iUB)
+			V.uGlobal.uBOM.RedimPreserve(0,V.Local.iUB)
+		F.Intrinsic.Control.EndIf
+		' reset at each new parent
+		V.Local.bAddNewLevel.Set(False)
+	F.Intrinsic.Control.EndIf
+
+	' get rid of the Name, and re-join the value
+	F.Intrinsic.Control.If(V.Local.sRet.UBound,>,0)
+		F.Intrinsic.Variable.PopArray(V.Local.sRet,V.Local.sRet)
+		' if not the Raw Stock line, pop off the Name
+		F.Intrinsic.Control.If(V.Local.sRet(v.Local.sRet.LBound).UCase,<>,"STOCK")
+			F.Intrinsic.String.Join(V.Local.sRet," ",V.Local.sVal)
+		' if it is the Raw Stock line, pop off the next value also
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Variable.PopArray(V.Local.sRet,V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet.UBound,>,0)
+				' then make sure there is a value associated
+				F.Intrinsic.Variable.PopArray(V.Local.sRet,V.Local.sRet)
+				F.Intrinsic.String.Join(V.Local.sRet," ",V.Local.sVal)
+			F.Intrinsic.Control.Else
+				V.Local.sVal.Set("")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Local.sVal.Set("")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.SelectCase(V.Local.sName.UCase)
+		F.Intrinsic.Control.Case("PARENT")
+'			F.Intrinsic.String.Split(V.Local.sVal,"_",V.Local.sVal)
+			V.uGlobal.uBOM(v.Local.iUB)!Parent.Set(V.Local.sVal(0).Trim)
+			V.uGlobal.uBOM(v.Local.iUB)!ViewSeq.Set(V.Local.iUB)
+
+		F.Intrinsic.Control.Case("SEQUENCE")
+			F.Intrinsic.String.LPad(V.Local.sVal,"0",4,V.Local.sVal)
+			V.uGlobal.uBOM(v.Local.iUB)!Sequence.Set(V.Local.sVal)
+
+		F.Intrinsic.Control.Case("PARTNO")
+'		F.Intrinsic.Control.Case("PROJECTINFORMATION.DOCUMENT NUMBER")
+			F.Intrinsic.String.Build("Processing Part {0}{1}",V.Ambient.NewLine,V.Local.sVal,V.Local.sMsg)
+			F.Intrinsic.UI.ChangeWaitStatus(V.Local.sMsg)
+'			F.Intrinsic.String.Split(V.Local.sVal,"_",V.Local.sVal)
+			V.uGlobal.uBOM(v.Local.iUB)!PartNo.Set(V.Local.sVal(0))
+			F.Intrinsic.Control.If(V.uGlobal.uBOM(v.Local.iUB)!PartNo,=,V.uGlobal.uBOM(v.Local.iUB)!Parent)
+				V.uGlobal.uBOM(v.Local.iUB)!IsParent.Set("Y")
+				F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!PartNo,V.uGlobal.uBOM(v.Local.iUB)!PartNo,V.uGlobal.uBOM!PrtParent,"*")
+				F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!PartNo,V.uGlobal.uBOM(v.Local.iUB)!PartNo,V.uGlobal.uBOM!IsParent,"Y")
+			F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.Case("COUNT")
+			V.uGlobal.uBOM(v.Local.iUB)!Count.Set(V.Local.sVal.Format*0.0000)
+
+		F.Intrinsic.Control.Case("LEVEL")
+			V.uGlobal.uBOM(v.Local.iUB)!Level.Set(V.Local.sVal)
+			F.Intrinsic.String.LPad(V.Local.sVal.Trim," ",V.Local.sVal.Long,V.Local.sVal)
+			F.Intrinsic.String.RPad(V.Local.sVal,"*",8,V.Local.sVal)
+			V.uGlobal.uBOM(v.Local.iUB)!PrtLevel.Set(V.Local.sVal)
+
+		F.Intrinsic.Control.Case("SUMMARYINFORMATION.TITLE")
+			V.uGlobal.uBOM(v.Local.iUB)!Description.Set(V.Local.sVal)
+
+		F.Intrinsic.Control.Case("CUSTOM.SOURCE")
+			F.Intrinsic.String.Split(V.Local.sVal,"-",V.Local.sVal)
+			V.uGlobal.uBOM(V.Local.iUB)!Source.Set(V.Local.sVal)
+
+		F.Intrinsic.Control.Case("PROJECTINFORMATION.REVISION")
+			V.uGlobal.uBOM(v.Local.iUB)!Revision.Set(V.Local.sVal)
+
+		F.Intrinsic.Control.Case("CUSTOM.UOM")
+			' if UM is blank, read UM = Inventory_Mstr.UM_Inventory
+			F.Intrinsic.Control.If(V.Local.sVal.Trim,=,"")
+				V.Local.sVal.Set("EA")
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Split(V.Local.sVal,"-",V.Local.sVal)
+			F.Intrinsic.Control.EndIf
+			V.uGlobal.uBOM(v.Local.iUB)!UM.Set(V.Local.sVal)
+
+		F.Intrinsic.Control.Case("CUSTOM.PARTTYPE")
+			F.Intrinsic.String.Split(V.Local.sVal,"-",V.Local.sVal)
+			F.Intrinsic.Control.SelectCase(V.Local.sVal(0).Trim)
+				F.Intrinsic.Control.Case("")
+					V.uGlobal.uBOM(V.Local.iUB)!Category.Set("")
+				F.Intrinsic.Control.Case("P")
+					V.uGlobal.uBOM(V.Local.iUB)!Category.Set("P")
+				F.Intrinsic.Control.Case("X")
+					V.uGlobal.uBOM(V.Local.iUB)!Category.Set("X")
+				F.Intrinsic.Control.Case("1")
+					V.uGlobal.uBOM(V.Local.iUB)!Category.Set("1")
+				F.Intrinsic.Control.Case("R")
+					V.uGlobal.uBOM(V.Local.iUB)!Category.Set("R")
+				F.Intrinsic.Control.CaseElse
+					V.uGlobal.uBOM(V.Local.iUB)!Category.Set("")
+
+			F.Intrinsic.Control.EndSelect
+'			V.uGlobal.uBOM(V.Local.iUB)!Category.Set(V.Local.sVal)
+
+		F.Intrinsic.Control.Case("ALT DESCRIPTION 1")
+			V.uGlobal.uBOM(v.Local.iUB)!AltDesc1.Set(V.Local.sVal)
+
+
+		F.Intrinsic.Control.Case("ALT DESCRIPTION 2")
+			V.uGlobal.uBOM(v.Local.iUB)!AltDesc2.Set(V.Local.sVal)
+
+		F.Intrinsic.Control.Case("PROD LINE")
+			F.Intrinsic.String.Split(V.Local.sRet,"-",V.Local.sRet)
+			V.uGlobal.uBOM(v.Local.iUB)!ProdLine.Set(V.Local.sRet)		
+
+		F.Intrinsic.Control.EndSelect
+	F.global.XML.DestroyNode(V.Local.sdoc,V.Local.sNode(0))
+
+	F.Global.XML.Next(V.Local.sDOc,"Rows",V.Local.bEOF)
+F.Intrinsic.Control.Loop
+F.Global.XML.CloseSet(V.Local.sDOc,"Rows")
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("readXML_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_SolidEdge_VAR001.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+'	F.Intrinsic.Debug.SetLA(V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError,"Error")
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.readXML.End
+
+Program.Sub.writeBOMFile.Start
+F.Intrinsic.Control.SetErrorHandler("writeBOMFile_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sParents.Declare(String)
+V.Local.sComponents.Declare(String)
+V.Local.iForEachParent.Declare(Long)
+V.Local.iForEachComponent.Declare(Long)
+V.Local.iSeq.Declare(String)
+V.Local.sBOMText.Declare(String)
+V.Local.sBOMFile.Declare(String)
+V.Local.sCommentText.Declare(String)
+V.Local.sCommentFile.Declare(String)
+V.Local.sCutListText.Declare(String)
+V.Local.iWait.Declare(Long)
+V.Local.iFor.Declare(Long)
+V.Local.iVal.Declare(Long)
+V.Local.sBOMBkp.Declare(String)
+
+' delete blank part lines
+F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uBOM!PartNo,"")
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uBOM)
+F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uBOM!ViewSeq,False)
+
+' for each Parent, write the line for the Parent, then find the components
+F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uBOM.LBound,V.uGlobal.uBOM.UBound,1)
+	' to prevent error
+	F.Intrinsic.Control.If(V.uGlobal.uBOM(v.Local.iFor)!Parent,=,V.uGlobal.uBOM(v.Local.iFor)!PartNo)
+		V.uGlobal.uBOM(v.Local.iFor)!Sequence.Set("0000")
+	F.Intrinsic.Control.EndIf
+
+	' wait dialog
+	F.Intrinsic.Math.Add(V.Local.iWait,1,V.Local.iWait)
+	F.Intrinsic.UI.ChangeWaitStatus("Loading BOM",V.Local.iWait,0,V.Local.sParents.UBound)
+	F.Intrinsic.Control.CallSub(Buildcomponenetstring,"FOR",V.Local.iFor,"SEQ",V.Local.iSeq)
+	F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sBomText,V.Args.LINE,V.Ambient.NewLine,V.Local.sBOMText)
+F.Intrinsic.Control.Next(V.Local.iFor)
+
+' Write text to the files, and send back filenames, to be loaded
+' BOM file will be bomhdr.txt.
+F.Intrinsic.String.Build("{0}\{1}",V.Caller.FilesDir,"bomhdr.txt",V.Local.sBOMFile)
+F.Intrinsic.File.String2File(V.Local.sBOMFile,V.Local.sBOMText)
+F.Intrinsic.String.Build("{0}\{1}",V.Caller.FilesDir,"bomhdr.bkp",V.Local.sBOMBkp)
+F.Intrinsic.File.String2File(V.Local.sBOMbkp,V.Local.sBOMText)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("writeBOMFile_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_SolidEdge_VAR001.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.writeBOMFile.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.SetErrorHandler("Unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.ODBC.Connection!Con.Close
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3862_FRE_SolidEdge.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+Program.Sub.Unload.End
+
+Program.Sub.buildParentString.Start
+' \====================================================
+' write data to fixed width line with values:
+' Parent(20), Sequence(4), Count(16), Part(20), UM(2), Description(30), Rev(3), Category(1), Source(1)
+' ====================================================\
+
+F.Intrinsic.Control.SetErrorHandler("buildParentString_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sLine.Declare(String)
+V.Local.sParent.Declare(String)
+V.Local.sRev.Declare(String)
+V.Local.sSeq.Declare(String,"0000")
+V.Local.sDescription.Declare(String,"UPLOADED")
+V.Local.sCount.Declare(String,"1")
+V.Local.sUM.Declare(String)
+V.Local.sCategory.Declare(String)
+V.Local.sSource.Declare(String)
+V.Local.sMisc.Declare(String)
+V.Local.iFor.Declare(Long)
+
+V.Local.iFor.Set(V.Args.FOR)
+' pad Parent to 20 char length
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!Parent," ",20,V.Local.sParent)
+F.Intrinsic.String.Left(V.Local.sParent,20,V.Local.sParent)
+' seq will be 0000
+' count will be 1, but padded to 16 char
+F.Intrinsic.String.RPad(V.Local.sCount," ",16,V.Local.sCount)
+' part is the Parent, on the Parent line
+' make sure UM is just 2 char
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!UM," ",2,V.Local.sUM)
+' description will be "UPLOADED, but padded to 30 char
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!Description," ",30,V.Local.sDescription)
+' Rev
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!Revision," ",3,V.Local.sRev)
+' make sure Category is 1 char
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!Category," ",1,V.Local.sCategory)
+' make sure Source is 1 char
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!Source," ",1,V.Local.sSource)
+
+F.Intrinsic.String.Build("{0}{1}{2}{3}{4}{5}{6}{7}{8}",V.Local.sParent,V.Local.sSeq,V.Local.sCount,V.Local.sParent,V.Local.sUM,V.Local.sDescription,V.Local.sRev,V.Local.sCategory,V.Local.sSource,V.Local.sLine)
+F.Intrinsic.Variable.AddRV("LINE",V.Local.sLine)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("buildParentString_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_SolidEdge_VAR001.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.buildParentString.End
+
+Program.Sub.buildComponenetString.Start
+' \====================================================
+' write data to fixed width line with values:
+' Parent(20), Sequence(4), Count(16), Part(20), UM(2), Description(30), Rev(3), Category(1), Source(1)
+' ====================================================\
+F.Intrinsic.Control.SetErrorHandler("buildComponenetString_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sLine.Declare(String)
+V.Local.sParent.Declare(String)
+V.Local.sPart.Declare(String)
+V.Static.sSeq.Declare(String)
+V.Local.sDescription.Declare(String)
+V.Local.sCount.Declare(String)
+V.Local.sUM.Declare(String)
+V.Local.sCategory.Declare(String)
+V.Local.sSource.Declare(String)
+V.Local.sMisc.Declare(String)
+V.Local.iFor.Declare(Long)
+V.Local.sRev.Declare(String)
+V.Local.iFor.Set(V.Args.FOR)
+
+' pad Parent to 20 char length
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!Parent," ",20,V.Local.sParent)
+F.Intrinsic.String.Left(V.Local.sParent,20,V.Local.sParent)
+' pad Seq to 4 char length
+F.Intrinsic.String.LPad(V.Args.SEQ,"0",4,V.Static.sSeq)
+F.Intrinsic.String.LPad(V.uGlobal.uBOM(v.Local.iFor)!Sequence,"0",4,V.Static.sseq)
+' pad count to 16 char length
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!Count,"0",4,V.Local.sCount)
+F.Intrinsic.String.LPad(V.uGlobal.uBOM(v.Local.iFor)!Count,"0",16,V.Local.sCount)
+' pad part ro 20 char length
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!PartNo," ",20,V.Local.sPart)
+' make sure UM is just 2 char
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!UM," ",2,V.Local.sUM)
+'V.Local.sUM.Set("  ")
+' description will be "UPLOADED, but padded to 30 char
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!Description," ",30,V.Local.sDescription)
+' Rev
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!Revision," ",3,V.Local.sRev)
+' make sure Category is 1 char
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!Category," ",1,V.Local.sCategory)
+' make sure Source is 1 char
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(v.Local.iFor)!Source," ",1,V.Local.sSource)
+
+F.Intrinsic.String.Build("{0}{1}{2}{3}{4}{5}{6}{7}{8}",V.Local.sParent,V.Static.sSeq,V.Local.sCount,V.Local.sPart,V.Local.sUM,V.Local.sDescription,V.Local.sRev,V.Local.sCategory,V.Local.sSource,V.Local.sLine)
+F.Intrinsic.Variable.AddRV("LINE",V.Local.sLine)
+
+F.Intrinsic.Variable.AddRV("LINE",V.Local.sLine)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("buildComponenetString_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_SolidEdge_VAR001.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.buildComponenetString.End
+
+Program.Sub.cmdLoad_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdLoad_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iFor.Declare(Long)
+V.Local.iRow.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.iRowCount.Declare(Long)
+
+Gui.FormXML.cmdLoad.Enabled(false)
+Gui.formBOM.cmdLoad.Enabled(false)
+
+F.Intrinsic.UI.InvokeWaitDialog("Loading BOM")
+
+' create the BOM upload file
+F.Intrinsic.Control.CallSub(Writebomfile)
+
+F.Global.General.CallWrapperSync(50,"xsolidwk")
+
+' load the data
+'F.Intrinsic.Control.CallSub(Loaddata,"BOM",V.Args.BOM)
+F.Intrinsic.UI.CloseWaitDialog
+
+' exit
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("cmdLoad_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_SolidEdge_VAR001.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdLoad_Click.End
+
+Program.Sub.fillXMLGrid.Start
+F.Intrinsic.Control.SetErrorHandler("fillXMLGrid_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sTxtFile.Declare(String)
+V.Local.sSel.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iRow.Declare(Long)
+V.Local.iFor.Declare(Long)
+
+' build grid on multi grid form
+Gui.formBOM.gsflexgrid1.Cols(10)
+Gui.formBOM.gsflexgrid1.Rows(2)
+Gui.formBOM.gsflexgrid1.FixedRows(1)
+Gui.formBOM.gsflexgrid1.TextMatrix(0,0,"Level")
+Gui.formBOM.gsflexgrid1.TextMatrix(1,0,"Part Number/Rev")
+Gui.formBOM.gsflexgrid1.TextMatrix(2,0,"Description")
+Gui.formBOM.gsflexgrid1.TextMatrix(3,0,"UM")
+Gui.formBOM.gsflexgrid1.TextMatrix(4,0,"Cat")
+Gui.formBOM.gsflexgrid1.TextMatrix(5,0,"Sc")
+Gui.formBOM.gsflexgrid1.TextMatrix(6,0,"Quantity")
+Gui.formBOM.gsflexgrid1.TextMatrix(7,0,"Parent")
+Gui.formBOM.gsflexgrid1.TextMatrix(8,0,"Product Line")
+'Gui.formBOM.gsflexgrid1.TextMatrix(9,0,"Browser")
+
+Gui.formBOM.gsflexgrid1.SetColumnPercentages(".1:.2:.2:.05:.05:.05:.1:.05:.07:.0")
+
+Gui.formBOM.gsflexgrid1.BuildStyle(1,0,"Type","Locked",True)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,0,"Format","Alignment",2)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,1,"Format","Alignment",2)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,2,"Type","Locked",True)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,2,"Format","Alignment",2)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,3,"Type","Locked",True)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,3,"Format","Alignment",2)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,4,"Format","Alignment",2)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,5,"Format","Alignment",2)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,7,"Type","Locked",True)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,7,"Format","Alignment",4)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,8,"Type","Locked",True)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,8,"Format","Alignment",2)
+'Gui.formBOM.gsflexgrid1.BuildStyle(1,9,"Type","Command","Part")
+'Gui.formBOM.gsflexgrid1.BuildStyle(1,9,"Format","Alignment",4)
+
+
+Gui.formBOM.gsflexgrid1.BuildStyle(1,0,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,1,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,2,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,3,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,4,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,5,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,6,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,7,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid1.BuildStyle(1,8,"Color","Back",V.Color.White)
+
+Gui.formBOM.gsflexgrid1.BuildStyle(2,0,"Color","Back",V.Color.LtRed)
+Gui.formBOM.gsflexgrid1.BuildStyle(2,1,"Color","Back",V.Color.LtRed)
+Gui.formBOM.gsflexgrid1.BuildStyle(2,2,"Color","Back",V.Color.LtRed)
+Gui.formBOM.gsflexgrid1.BuildStyle(2,3,"Color","Back",V.Color.LtRed)
+Gui.formBOM.gsflexgrid1.BuildStyle(2,4,"Color","Back",V.Color.LtRed)
+Gui.formBOM.gsflexgrid1.BuildStyle(2,5,"Color","Back",V.Color.LtRed)
+Gui.formBOM.gsflexgrid1.BuildStyle(2,6,"Color","Back",V.Color.LtRed)
+Gui.formBOM.gsflexgrid1.BuildStyle(2,7,"Color","Back",V.Color.LtRed)
+Gui.formBOM.gsflexgrid1.BuildStyle(2,8,"Color","Back",V.Color.LtRed)
+
+
+Gui.formBOM.gsflexgrid1.BuildStyle(4,0,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid1.BuildStyle(4,1,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid1.BuildStyle(4,2,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid1.BuildStyle(4,3,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid1.BuildStyle(4,4,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid1.BuildStyle(4,5,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid1.BuildStyle(4,6,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid1.BuildStyle(4,7,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid1.BuildStyle(4,8,"Color","Back",V.Color.Yellow)
+
+' build grid on single grid form
+Gui.formXML.gsflexgrid1.Cols(10)
+Gui.formXML.gsflexgrid1.Rows(2)
+Gui.formXML.gsflexgrid1.FixedRows(1)
+Gui.formXML.gsflexgrid1.TextMatrix(0,0,"Level")
+Gui.formXML.gsflexgrid1.TextMatrix(1,0,"Part Number/Rev")
+Gui.formXML.gsflexgrid1.TextMatrix(2,0,"Description")
+Gui.formXML.gsflexgrid1.TextMatrix(3,0,"UM")
+Gui.formXML.gsflexgrid1.TextMatrix(4,0,"Cat")
+Gui.formXML.gsflexgrid1.TextMatrix(5,0,"Sc")
+Gui.formXML.gsflexgrid1.TextMatrix(6,0,"Quantity")
+Gui.formXML.gsflexgrid1.TextMatrix(7,0,"Parent")
+Gui.formXML.gsflexgrid1.TextMatrix(8,0,"Product Line")
+
+Gui.formXML.gsflexgrid1.SetColumnPercentages(".1:.2:.25:.05:.05:.05:.1:.05:.07:.0")
+
+Gui.formXML.gsflexgrid1.BuildStyle(1,0,"Type","Locked",True)
+Gui.formXML.gsflexgrid1.BuildStyle(1,0,"Format","Alignment",2)
+Gui.formXML.gsflexgrid1.BuildStyle(1,1,"Format","Alignment",2)
+Gui.formXML.gsflexgrid1.BuildStyle(1,2,"Type","Locked",True)
+Gui.formXML.gsflexgrid1.BuildStyle(1,2,"Format","Alignment",2)
+Gui.formXML.gsflexgrid1.BuildStyle(1,3,"Type","Locked",True)
+Gui.formXML.gsflexgrid1.BuildStyle(1,3,"Format","Alignment",2)
+Gui.formXML.gsflexgrid1.BuildStyle(1,4,"Format","Alignment",2)
+Gui.formXML.gsflexgrid1.BuildStyle(1,5,"Format","Alignment",2)
+Gui.formXML.gsflexgrid1.BuildStyle(1,7,"Type","Locked",True)
+Gui.formXML.gsflexgrid1.BuildStyle(1,7,"Format","Alignment",4)
+Gui.formXML.gsflexgrid1.BuildStyle(1,8,"Type","Locked",True)
+Gui.formXML.gsflexgrid1.BuildStyle(1,8,"Format","Alignment",2)
+
+Gui.formXML.gsflexgrid1.BuildStyle(1,0,"Color","Back",V.Color.White)
+Gui.formXML.gsflexgrid1.BuildStyle(1,1,"Color","Back",V.Color.White)
+Gui.formXML.gsflexgrid1.BuildStyle(1,2,"Color","Back",V.Color.White)
+Gui.formXML.gsflexgrid1.BuildStyle(1,3,"Color","Back",V.Color.White)
+Gui.formXML.gsflexgrid1.BuildStyle(1,4,"Color","Back",V.Color.White)
+Gui.formXML.gsflexgrid1.BuildStyle(1,5,"Color","Back",V.Color.White)
+Gui.formXML.gsflexgrid1.BuildStyle(1,6,"Color","Back",V.Color.White)
+Gui.formXML.gsflexgrid1.BuildStyle(1,7,"Color","Back",V.Color.White)
+Gui.formXML.gsflexgrid1.BuildStyle(1,8,"Color","Back",V.Color.White)
+
+Gui.formXML.gsflexgrid1.BuildStyle(3,0,"Color","Back",V.Color.Yellow)
+Gui.formXML.gsflexgrid1.BuildStyle(3,1,"Color","Back",V.Color.Yellow)
+Gui.formXML.gsflexgrid1.BuildStyle(3,2,"Color","Back",V.Color.Yellow)
+Gui.formXML.gsflexgrid1.BuildStyle(3,3,"Color","Back",V.Color.Yellow)
+Gui.formXML.gsflexgrid1.BuildStyle(3,4,"Color","Back",V.Color.Yellow)
+Gui.formXML.gsflexgrid1.BuildStyle(3,5,"Color","Back",V.Color.Yellow)
+Gui.formXML.gsflexgrid1.BuildStyle(3,6,"Color","Back",V.Color.Yellow)
+Gui.formXML.gsflexgrid1.BuildStyle(3,7,"Color","Back",V.Color.Yellow)
+Gui.formXML.gsflexgrid1.BuildStyle(3,8,"Color","Back",V.Color.Yellow)
+
+
+' view doesn't need to list all lines that will be loaded
+F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uViewCopy!Sequence,"0000")
+F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uViewCopy!PartNo,"")
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uViewCopy)
+F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uViewCopy!viewSeq,False)
+
+' write details to txt
+F.Intrinsic.String.Build("{0}\BOM_Preview.txt",V.Caller.FilesDir,V.Local.sTxtFile)
+f.Intrinsic.Variable.uDTToString(V.uGlobal.uViewCopy,"PrtLevel*!*PartNo*!*Description*!*UM*!*Category*!*Source*!*Count*!*PrtParent*!*ProdLine",v.Ambient.NewLine,v.Ambient.Tab,v.Local.sRet)
+F.Intrinsic.File.String2File(V.Local.sTxtFile,V.Local.sRet)
+
+' if an exsting BOM was found, fill the grid on the multi grid form, else fill the gid on the single grid form
+F.Intrinsic.Control.If(V.uGlobal.uGSS!Parent.UBound,>,-1)
+	Gui.formBOM.gsflexgrid1.LoadFromUDT("V.uGlobal.uViewCopy","PrtLevel*!*PartNo*!*Description*!*UM*!*Category*!*Source*!*Count*!*PrtParent*!*ProdLine",1)
+F.Intrinsic.Control.Else
+	Gui.FormXML.gsflexgrid1.LoadFromUDT("V.uGlobal.uViewCopy","PrtLevel*!*PartNo*!*Description*!*UM*!*Category*!*Source*!*Count*!*PrtParent*!*ProdLine",1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.uGlobal.uViewCopy!Parent.UBound,<,0)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'' look for non-inventory parts, and to re-use the same loop, look for user1 values here, too
+'F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uBOM!Parent.LBound,V.uGlobal.uBOM!Parent.UBound,1)
+F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uViewCopy!Parent.LBound,V.uGlobal.uViewCopy!Parent.UBound,1)
+	F.Intrinsic.String.Build("select * from Inventory_Mstr where Part = '{0}' ",V.uGlobal.uViewCopy(v.Local.iFor)!PartNo,V.Local.sSel)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSel,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,=,"")
+'		F.Global.Inventory.AddPartToBatch(V.uGlobal.uViewCopy(v.Local.iFor)!PartNo,V.uGlobal.uViewCopy(v.Local.iFor)!UM,V.uGlobal.uViewCopy(v.Local.iFor)!Description,"",V.uGlobal.uViewCopy(v.Local.iFor)!ProdLine,V.uGlobal.uViewCopy(v.Local.iFor)!Source,V.uGlobal.uViewCopy(v.Local.iFor)!AltDesc1,V.uGlobal.uViewCopy(v.Local.iFor)!AltDesc2,"","UPLOADED")
+		V.uGlobal.uViewCopy(v.Local.iFor)!NonInv.Set("Y")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Math.Add(V.Local.iFor,1,V.Local.iRow)
+	F.Intrinsic.Control.if(V.uGlobal.uViewCopy(v.Local.iFor)!NonInv,=,"Y")
+		Gui.FormXML.gsflexgrid1.ApplyStyle(V.Local.iRow,3)
+		Gui.formBOM.gsflexgrid1.ApplyStyle(V.Local.iRow,4)
+	F.Intrinsic.Control.Else
+		Gui.FormXML.gsflexgrid1.ApplyStyle(V.Local.iRow,1)
+		Gui.formBOM.gsflexgrid1.ApplyStyle(V.Local.iRow,1)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Next(V.Local.iFor)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("fillXMLGrid_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_SolidEdge_VAR001.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.fillXMLGrid.End
+
+Program.Sub.filterData.Start
+
+' \=========================================================
+' this sub is for cleaning up the udt values, before writing them to the screen
+' and loading to the BOM module
+' =========================================================\
+F.Intrinsic.Control.SetErrorHandler("filterData_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iFor.Declare(Long)
+V.Local.sVal.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sSQL.Declare(String)
+
+' set screen values to the first Parent
+Gui.formBOM.txtParent.Text(V.uGlobal.uBOM(0)!PartNo)
+Gui.formBOM.txtRev.Text(V.uGlobal.uBOM(0)!Revision)
+Gui.formBOM.txtDescription.Text(V.uGlobal.uBOM(0)!Description)
+Gui.formBOM.txtSc.Text(V.uGlobal.uBOM(0)!Source)
+Gui.formBOM.txtPL.Text(V.uGlobal.uBOM(0)!ProdLine)
+
+F.Intrinsic.String.GSSPartString(V.uGlobal.uBOM(0)!PartNo,V.uGlobal.uBOM(0)!Revision,V.Local.sPart)
+F.Intrinsic.String.Build("SELECT * FROM INVENTORY_MSTR WHERE PART = '{0}'",V.Local.sPart,V.Local.sSQL)
+F.ODBC.Connection!Con.OpenLocalRecordSetRO("rst",V.Local.sSQL)
+
+F.Intrinsic.Control.If(V.ODBC.Con!rst.EOF,=,True)
+	'Set both since we don't know which one is being used at this time.
+	F.Intrinsic.Control.If(V.Global.bBOMExists,=,False)
+		Gui.formXML.txtParent.BackColor(V.Color.Yellow)
+		Gui.formXML.txtRev.BackColor(V.Color.Yellow)
+		Gui.formXML.txtDescription.BackColor(V.Color.Yellow)
+		Gui.FormXML.txtCat.BackColor(V.Color.Yellow)
+		Gui.FormXML.txtSc.BackColor(V.Color.Yellow)
+		Gui.FormXML.txtXMLUM.BackColor(V.Color.Yellow)
+		Gui.FormXML.txtPL.BackColor(V.Color.Yellow)
+	F.Intrinsic.Control.Else
+		Gui.formBom.txtParent.BackColor(V.Color.Yellow)
+		Gui.formBom.txtRev.BackColor(V.Color.Yellow)
+		Gui.formBom.txtDescription.BackColor(V.Color.Yellow)
+		Gui.FormBom.txtCat.BackColor(V.Color.Yellow)
+		Gui.formBom.txtSc.BackColor(V.Color.Yellow)
+		Gui.FormBom.txtUM.BackColor(V.Color.Yellow)
+		Gui.FormBom.txtPL.BackColor(V.Color.Yellow)
+	F.Intrinsic.Control.EndIf
+'	F.Global.Inventory.AddPartToBatch(V.Local.sPart,V.uGlobal.uBOM(0)!UM,V.uGlobal.uBOM(0)!Description,"",V.uGlobal.uBOM(0)!ProdLine,V.uGlobal.uBOM(0)!Source,V.uGlobal.uBOM(0)!AltDesc1,V.uGlobal.uBOM(0)!AltDesc2,"","UPLOADED")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Con!rst.Close
+
+'Set Parent information
+Gui.formXML.txtParent.Text(V.uGlobal.uBOM(0)!PartNo)
+Gui.formXML.txtRev.Text(V.uGlobal.uBOM(0)!Revision)
+Gui.formXML.txtDescription.Text(V.uGlobal.uBOM(0)!Description)
+Gui.FormXML.txtSc.Text(V.uGlobal.uBOM(0)!Source)
+Gui.FormXML.txtPL.Text(V.uGlobal.uBOM(0)!ProdLine)
+
+' be sure all parts that are parents have the correct UM
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!IsParent,"Y",V.uGlobal.uBOM!UM,"EA")
+
+' for now setting default um to EA.  If the conditions were met for something different, it should be set already
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!UM,"",V.uGlobal.uBOM!UM,"EA")
+Gui.FormXML.txtXMLUM.Text(V.uGlobal.uBOM(0)!UM)
+Gui.FormBOM.txtUM.Text(V.uGlobal.uBOM(0)!UM)
+
+' default Category to "N"
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!Category,"",V.uGlobal.uBOM!Category,"N")
+Gui.FormXML.txtCat.Text(V.uGlobal.uBom(0)!Category)
+Gui.formBOM.txtCat.Text(V.uGlobal.uBOM(0)!Category)
+
+' set the REV to all Parts and Parents
+F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uBOM!Revision,"<>::",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	F.Intrinsic.Control.For(V.Local.iFor,V.Local.sRet.LBound,V.Local.sRet.UBound,1)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!PartNo,V.uGlobal.uBOM(V.Local.sRet(v.Local.iFor))!PartNo,V.uGlobal.uBOM!Revision,V.uGlobal.uBOM(v.Local.sRet(v.Local.iFor))!Revision)
+		F.Intrinsic.String.GSSPartString(V.uGlobal.uBOM(V.Local.sRet(v.Local.iFor))!PartNo,V.uGlobal.uBOM(V.Local.sRet(v.Local.iFor))!Revision,V.Local.sVal)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!Parent,V.uGlobal.uBOM(V.Local.sRet(v.Local.iFor))!PartNo,V.uGlobal.uBOM!Parent,V.Local.sVal)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!PartNo,V.uGlobal.uBOM(V.Local.sRet(v.Local.iFor))!PartNo,V.uGlobal.uBOM!PartNo,V.Local.sVal)
+	F.Intrinsic.Control.Next(V.Local.iFor)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Variable.UDTCopy(V.uGlobal.uBOM,V.uGlobal.uViewCopy,False)
+
+F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Label("filterData_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_SolidEdge_VAR001.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.filterData.End
+
+Program.Sub.explodeBOM.Start
+F.Intrinsic.Control.SetErrorHandler("explodeBOM_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSel.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sFilePath.Declare(String)
+V.Local.sParams.Declare(String)
+V.Local.bExists.Declare(Boolean)
+V.Local.sFile.Declare(String)
+V.Local.iFor.Declare(Long)
+V.Local.sBOM.Declare(String)
+V.Local.sHold.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.iRow.Declare(Long)
+
+V.uGlobal.uGSS.Redim(-1,-1)
+
+
+F.Intrinsic.String.RPad(V.uGlobal.uBOM(0)!Parent," ",17,V.Local.sHold)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sHold,V.uGlobal.uBOM(0)!Revision,V.Local.sBOM)
+' see if BOM exists, if not exit sub
+F.Intrinsic.String.Build("select * from BOM_Mstr where Parent = '{0}'",V.Local.sBOM,V.Local.sSel)
+F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSel,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet.Trim,=,"")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+' if BOM exists, explode it to a txt file
+V.Global.bBOMExists.Set(True)
+F.Intrinsic.String.Concat(V.System.Temp,"\BOM",V.Caller.Terminal,V.Local.sFilePath)
+F.Intrinsic.String.Build("0{0}{1}{0}{2}",V.Ambient.Tab,V.Local.sBOM,V.Local.sFilePath,V.Local.sParams)
+F.Intrinsic.File.String2File(V.Local.sFilePath,V.Local.sParams)
+'F.Intrinsic.Debug.CallWrapperDebugEnable
+F.Global.General.CallWrapperSync(410000,V.Local.sFilePath)
+
+
+' see if the exploded BOM was created, if not exit sub
+F.Intrinsic.File.Exists(V.Local.sFilePath,V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists,=,False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+' on 12/03/2014 this callwrapper is not returning a good file namee
+f.Intrinsic.File.FileToStringArray(v.Local.sFilePath,v.Ambient.Tab,v.Local.sRet)
+V.Local.sRet.RedimPreserve(0,3)
+'Get the File name the callwrapper created.
+F.Intrinsic.File.GetFileNameFromFQN(V.Local.sRet(3),V.Local.sFile.Trim)
+'Remove all the spaces after the file name, and replace still leaves a return at the end of the name that cannot be trimmed.
+F.Intrinsic.String.Split(V.Local.sFile," ",V.Local.sFile)
+'Save full path with file name
+F.Intrinsic.String.Concat(V.System.Temp,"\",V.Local.sFile(0).Trim,V.Local.sFilePath.Trim)
+
+' if file not found, exit sub
+F.Intrinsic.File.Exists(V.Local.sFilePath,V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists,=,False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+' write data to udt for easier comparison, later
+F.Intrinsic.File.File2String(V.Local.sFilePath,V.Local.sRet)
+F.Intrinsic.Variable.LoadUDTFromString(V.uGlobal.uGSS,"Line*!*Seq*!*Part*!*Description*!*Cat*!*Source*!*Qty*!*OnHand*!*OnOrder*!*Required*!*Net*!*RtrNet*!*Parent*!*ldHrs*!*LdDate*!*filler",V.Local.sRet,V.Ambient.NewLine,"|~|",False,1000)
+' first 2 elements are header info, 3rd is the parent
+F.Intrinsic.Variable.UDTFlagOrdinal(V.uGlobal.uGSS,True,0)
+F.Intrinsic.Variable.UDTFlagOrdinal(V.uGlobal.uGSS,True,1)
+F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uGSS!Seq,"")
+
+' buuld the new grid
+Gui.formBOM.gsflexgrid2.Cols(9)
+Gui.formBOM.gsflexgrid2.Rows(2)
+Gui.formBOM.gsflexgrid2.FixedRows(1)
+Gui.formBOM.gsflexgrid2.TextMatrix(0,0,"Level")
+Gui.formBOM.gsflexgrid2.TextMatrix(1,0,"Part Number/Rev")
+Gui.formBOM.gsflexgrid2.TextMatrix(2,0,"Description")
+Gui.formBOM.gsflexgrid2.TextMatrix(3,0,"UM")
+Gui.formBOM.gsflexgrid2.TextMatrix(4,0,"Cat")
+Gui.formBOM.gsflexgrid2.TextMatrix(5,0,"Sc")
+Gui.formBOM.gsflexgrid2.TextMatrix(6,0,"Quantity")
+Gui.formBOM.gsflexgrid2.TextMatrix(7,0,"Parent")
+Gui.formBOM.gsflexgrid2.TextMatrix(8,0,"Product Line")
+
+Gui.formBOM.gsflexgrid2.SetColumnPercentages(".1:.2:.35:.05:.05:.05:.1:.05:.05")
+
+Gui.formBOM.gsflexgrid2.BuildStyle(1,0,"Type","Locked",True)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,0,"Format","Alignment",2)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,1,"Type","Locked",True)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,1,"Format","Alignment",2)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,2,"Type","Locked",True)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,2,"Format","Alignment",2)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,3,"Type","Locked",True)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,3,"Format","Alignment",2)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,4,"Type","Locked",True)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,4,"Format","Alignment",2)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,5,"Type","Locked",True)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,5,"Format","Alignment",2)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,6,"Type","Locked",True)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,7,"Type","Locked",True)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,7,"Format","Alignment",4)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,8,"Type","Locked",True)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,8,"Format","Alignment",2)
+
+Gui.formBOM.gsflexgrid2.BuildStyle(1,0,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,1,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,2,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,3,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,4,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,5,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,6,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,7,"Color","Back",V.Color.White)
+Gui.formBOM.gsflexgrid2.BuildStyle(1,8,"Color","Back",V.Color.White)
+
+Gui.formBOM.gsflexgrid2.BuildStyle(2,0,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid2.BuildStyle(2,1,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid2.BuildStyle(2,2,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid2.BuildStyle(2,3,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid2.BuildStyle(2,4,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid2.BuildStyle(2,5,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid2.BuildStyle(2,6,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid2.BuildStyle(2,7,"Color","Back",V.Color.Yellow)
+Gui.formBOM.gsflexgrid2.BuildStyle(2,8,"Color","Back",V.Color.Yellow)
+
+' set screen values to the GSS side of the screen
+F.Intrinsic.String.LPad(V.uGlobal.uGSS(2)!Parent," ",20,V.Local.sHold)
+F.Intrinsic.String.Left(V.Local.sHold,17,V.Local.sPart)
+Gui.formBOM.txtGSSParent.Text(V.Local.sPart.Trim)
+F.Intrinsic.String.Right(V.Local.sHold,3,V.Local.sPart)
+Gui.formBOM.txtGSSRev.Text(V.Local.sPart.Trim)
+Gui.formBOM.txtGSSDesc.Text(V.uGlobal.uGSS(2)!Description)
+
+'Running before as well as after in an attempt to update values for Parent
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Source,"PS",V.uGlobal.uGSS!Source,"P")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Source,"MJ",V.uGlobal.uGSS!Source,"F")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Source,"MS",V.uGlobal.uGSS!Source,"M")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Source,"PJ",V.uGlobal.uGSS!Source,"J")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Cat,"Nor",V.uGlobal.uGSS!Cat,"N")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Cat,"Pht",V.uGlobal.uGSS!Cat,"P")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Cat,"Xcl",V.uGlobal.uGSS!Cat,"X")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Cat,"Set",V.uGlobal.uGSS!Cat,"1")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Cat,"Ref",V.uGlobal.uGSS!Cat,"R")
+
+Gui.formBOM.txtGSSCat.Text(V.uGlobal.uGSS(2)!Cat)
+Gui.formBOM.txtGSSSc.Text(V.uGlobal.uGSS(2)!Source)
+
+'Get additional parent part data
+F.Intrinsic.String.Build("SELECT * FROM INVENTORY_MSTR WHERE PART = '{0}'",V.uGlobal.uGSS(2)!Parent,V.Local.sSel)
+F.ODBC.Connection!Con.OpenLocalRecordsetRO("rstPL",V.Local.sSel)
+
+F.Intrinsic.Control.If(V.ODBC.Con!rstPL.EOF,<>,True)
+	Gui.formBOM.txtGSSPL.Text(V.ODBC.Con!rstPL.FieldValTrim!PRODUCT_LINE)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Con!rstPL.Close
+
+F.Intrinsic.String.Build("Select UM_INVENTORY FROM BOM_MSTR WHERE PARENT = '{0}' AND PART = '{0}'",V.uGlobal.uGSS(2)!Parent,V.Local.sSel)
+F.ODBC.Connection!Con.OpenLocalRecordsetRO("rstUM",V.Local.sSel)
+
+F.Intrinsic.Control.If(V.ODBC.Con!rstUM.EOF,<>,True)
+	Gui.formBOM.txtGSSUM.Text(V.ODBC.Con!rstUM.FieldValTrim!UM_INVENTORY)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Con!rstUM.Close
+
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uGSS)
+
+' some screen values won't be on the exploded BOM text, need to get those from the tables
+F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uGSS!Parent.LBound,V.uGlobal.uGSS!Parent.UBound,1)
+	F.Intrinsic.String.Build("select UM_Inventory, Quantity from BOM_Mstr where Parent = '{0}' and Part = '{1}'",V.uGlobal.uGSS(v.Local.iFor)!Parent,V.uGlobal.uGSS(v.Local.iFor)!Part,V.Local.sSel)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSel,V.Local.sRet)
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	V.Local.sRet.RedimPreserve(0,1)
+	V.uGlobal.uGSS(v.Local.iFor)!UM.Set(V.Local.sRet(0))
+	V.uGlobal.uGSS(v.Local.iFor)!Qty.Set(V.Local.sRet(1).Format*0.0000)
+
+	F.Intrinsic.String.Build("select Is_Parent from BOM_Eng where Part = '{0}'",V.uGlobal.uGSS(v.Local.iFor)!Part,V.Local.sSel)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSel,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		V.uGlobal.uGSS(v.Local.iFor)!ISParent.Set("*")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("select * from Inventory_Mstr where Part ='{0}'",V.uGlobal.uGSS(v.Local.iFor)!Part,V.Local.sSel)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSel,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,=,"")
+		V.uGlobal.uGSS(v.Local.iFor)!NonInv.Set("Y")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		V.uGlobal.uGSS(v.Local.iFor)!ProdLine.Set(V.Local.sRet(3).Trim)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Format(V.uGlobal.uGSS(v.Local.iFor)!Qty,"0.0000",V.uGlobal.uGSS(v.Local.iFor)!Qty)
+F.Intrinsic.Control.Next(V.Local.iFor)
+
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Source,"PS",V.uGlobal.uGSS!Source,"P")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Source,"MJ",V.uGlobal.uGSS!Source,"F")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Source,"MS",V.uGlobal.uGSS!Source,"M")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Source,"PJ",V.uGlobal.uGSS!Source,"J")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Cat,"Nor",V.uGlobal.uGSS!Cat,"N")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Cat,"Pht",V.uGlobal.uGSS!Cat,"P")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Cat,"Xcl",V.uGlobal.uGSS!Cat,"X")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Cat,"Set",V.uGlobal.uGSS!Cat,"1")
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uGSS!Cat,"Ref",V.uGlobal.uGSS!Cat,"R")
+
+' finally, load the grid
+Gui.formBOM.gsflexgrid2.LoadFromUdt("v.uGlobal.uGSS","Seq*!*Part*!*Description*!*UM*!*Cat*!*Source*!*Qty*!*IsParent*!*ProdLine",1)
+
+'' look for non-inventory parts
+F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uGSS!Parent.LBound,V.uGlobal.uGSS!Parent.UBound,1)
+	F.Intrinsic.Math.Add(V.Local.iFor,1,V.Local.iRow)
+	F.Intrinsic.Control.if(V.uGlobal.uGSS(v.Local.iFor)!NonInv,=,"Y")
+		Gui.formBOM.gsflexgrid2.ApplyStyle(V.Local.iRow,2)
+	F.Intrinsic.Control.Else
+		Gui.formBOM.gsflexgrid2.ApplyStyle(V.Local.iRow,1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iFor)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("explodeBOM_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_Inventor_Interface_v01.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.explodeBOM.End
+
+program.sub.formbom_resize.start
+F.Intrinsic.Control.SetErrorHandler("formbom_resize_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.local.width.declare(Long)
+V.local.height.declare(Long)
+V.local.x.declare(Long)
+V.local.Y.declare(Long)
+
+Function.Intrinsic.Control.If(Variable.Screen.formBOM.Width,<,25200)
+	Gui.formBOM..Size(25200,Variable.Screen.formBOM.Height)
+Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.If(Variable.Screen.formBOM.height,<,9705)
+	Gui.formBOM..Size(Variable.Screen.formBOM.Width,9705)
+Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM.Height,0.923,Variable.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM.Height,0.006,Variable.Local.Y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM.Width,0.488,Variable.Local.width)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM.Width,0.004,Variable.Local.X)
+Gui.formBOM.frmXML.Position(V.Local.x,V.Local.y)
+Gui.formBOM.frmXML.Size(V.Local.width,V.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM.Height,0.923,Variable.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM.Height,0.006,Variable.Local.Y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM.Width,0.488,Variable.Local.width)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM.Width,0.496,Variable.Local.X)
+Gui.formBOM.frmGSS.Position(V.Local.x,V.Local.y)
+Gui.formBOM.frmGSS.Size(V.Local.width,V.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.752,Variable.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.117,Variable.Local.Y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Width,0.944,Variable.Local.width)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmXML.Width,0.016,Variable.Local.X)
+Gui.formBOM.gsflexgrid1.Position(V.Local.x,V.Local.y)
+Gui.formBOM.gsflexgrid1.Size(V.Local.width,V.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmGSS.Height,0.752,Variable.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmGSS.Height,0.114,Variable.Local.Y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmGSS.Width,0.944,Variable.Local.width)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmGSS.Width,0.016,Variable.Local.X)
+Gui.formBOM.gsflexgrid2.Position(V.Local.x,V.Local.y)
+Gui.formBOM.gsflexgrid2.Size(V.Local.width,V.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.929,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmXML.Width,0.016,Variable.Local.X)
+Gui.formBOM.cmdLoad.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.929,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmXML.Width,0.132,Variable.Local.X)
+Gui.formBOM.cmdRefresh.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.929,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmXML.Width,0.249,Variable.Local.X)
+'Gui.formBOM.cmdSD.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.929,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmXML.Width,0.731,Variable.Local.X)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.883,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmXML.Width,0.016,Variable.Local.X)
+Gui.formBOM.txtDisc.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.883,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmXML.Width,0.077,Variable.Local.X)
+Gui.formBOM.lbl11.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.883,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmXML.Width,0.187,Variable.Local.X)
+Gui.formBOM.txtNonInv.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.883,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmXML.Width,0.248,Variable.Local.X)
+Gui.formBOM.lbl12.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.929,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmXML.Width,0.248,Variable.Local.X)
+Gui.formBOM.cmdCreatePrts.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.929,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmXML.Width,0.484,Variable.Local.X)
+'Gui.formBOM.cmdCreateRtr.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.083,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmXML.Width,0.016,Variable.Local.X)
+Gui.formBOM.lbl13.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmGSS.Height,0.083,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmGSS.Width,0.016,Variable.Local.X)
+Gui.formBOM.lbl14.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.formBOM!frmXML.Height,0.929,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.formBOM!frmXML.Width,0.602,Variable.Local.X)
+'Gui.formBOM.cmdECN.Position(V.Local.x,V.Local.y)
+F.Intrinsic.Math.Mult(V.Screen.FormBOM!frmXML.Height,.883,Variable.Local.Y)
+F.Intrinsic.Math.Mult(V.Screen.formBOM!frmXML.Width,0.367,V.Local.x)
+Gui.FormBOM.frmSource.Position(V.Local.x,V.Local.Y)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("formbom_resize_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3862_FRE_SolidEdge.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(unload)
+Function.Intrinsic.Control.EndIf
+program.sub.formbom_resize.End
+
+Program.Sub.Compare.Start
+F.Intrinsic.Control.SetErrorHandler("Compare_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Local.iFor.Declare(Long)
+V.Local.sSel.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iRow.Declare(Long)
+V.Local.sPart.Declare(String)
+V.Local.sGSPart.Declare(String)
+
+' if existing BOM wasn't found, nothing to compare, exit sub
+F.Intrinsic.Control.If(V.uGlobal.uGSS!Parent.UBound,=,-1)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+' for each line loaded from the XML, verify the details on the GSS BOM
+' just look for the common line, in case there is a whole line missing
+' if a discrepancy is found, highlight the row on the grid
+Gui.formBOM.gsflexgrid1.Visible(false)
+Gui.formBOM.gsflexgrid2.Visible(false)
+
+F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uViewCopy!Parent.LBound,V.uGlobal.uViewCopy!Parent.UBound,1)
+	F.Intrinsic.String.GSSPartString(V.uGlobal.uBOM(v.Local.iFor)!PartNo,V.uGlobal.uBOM(v.Local.iFor)!Revision,V.Local.sPart)
+
+	F.Intrinsic.Math.Add(V.Local.iFor,1,V.Local.iRow)
+	Gui.formBOM.gsflexgrid1.ApplyStyle(V.Local.iRow,1)
+	Gui.formBOM.gsflexgrid2.ApplyStyle(V.Local.iRow,1)
+
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uGSS!Part,V.uGlobal.uViewCopy(v.Local.iFor)!PartNo,V.uGlobal.uGSS!Seq,V.uGlobal.uViewCopy(v.Local.iFor)!PrtLevel,V.uGlobal.uGSS!Cat,V.uGlobal.uViewCopy(v.Local.iFor)!Category,V.uGlobal.uGSS!Source,V.uGlobal.uViewCopy(v.Local.iFor)!Source,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,=,"")
+		Gui.formBOM.gsflexgrid1.ApplyStyle(V.Local.iRow,2)
+	F.Intrinsic.Control.Else
+		Gui.formBOM.gsflexgrid1.ApplyStyle(V.Local.iRow,1)
+		Gui.formBOM.gsflexgrid2.ApplyStyle(V.Local.iRow,1)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("select * from Inventory_Mstr where Part = '{0}' ",V.uGlobal.uViewCopy(v.Local.iFor)!PartNo,V.Local.sSel)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSel,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,=,"")
+		Gui.formBOM.gsflexgrid1.ApplyStyle(V.Local.iRow,4)
+		Gui.formBOM.gsflexgrid2.ApplyStyle(V.Local.iRow,2)
+		Gui.formBOM.txtGSSParent.BackColor(V.Color.Yellow)
+		Gui.formBOM.txtGSSRev.BackColor(V.Color.Yellow)
+		Gui.formBOM.txtGSSDesc.BackColor(V.Color.Yellow)
+		Gui.formBOM.txtGSSUM.BackColor(V.Color.Yellow)
+		Gui.formBOM.txtGSSSc.BackColor(V.Color.Yellow)
+		Gui.formBOM.txtGSSPL.BackColor(V.Color.Yellow)
+		Gui.formBOM.txtGSSCat.BackColor(V.Color.Yellow)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iFor)
+
+Gui.formBOM.gsflexgrid1.Visible(True)
+Gui.formBOM.gsflexgrid2.Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Compare_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_Inventor_Interface_v01.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Compare.End
+
+program.sub.formxml_resize.start
+F.Intrinsic.Control.SetErrorHandler("formxml_resize_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.local.width.declare(Long)
+V.local.height.declare(Long)
+V.local.x.declare(Long)
+V.local.Y.declare(Long)
+
+Function.Intrinsic.Control.If(Variable.Screen.FormXML.Width,<,12300)
+	Gui.FormXML..Size(12300,Variable.Screen.FormXML.Height)
+Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.If(Variable.Screen.FormXML.height,<,9975)
+	Gui.FormXML..Size(Variable.Screen.FormXML.Width,9975)
+Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML.Height,0.907,Variable.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML.Height,0.005,Variable.Local.Y)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML.Width,0.965,Variable.Local.width)
+Function.Intrinsic.Math.Mult(Variable.Screen.FormXML.Width,0.009,Variable.Local.X)
+Gui.FormXML.frame1.Position(V.Local.x,V.Local.y)
+Gui.FormXML.frame1.Size(V.Local.width,V.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML!frame1.Height,0.745,Variable.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML!frame1.Height,0.098,Variable.Local.Y)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML!frame1.Width,0.977,Variable.Local.width)
+Function.Intrinsic.Math.Mult(Variable.Screen.FormXML!frame1.Width,0.015,Variable.Local.X)
+Gui.FormXML.gsflexgrid1.Position(V.Local.x,V.Local.y)
+Gui.FormXML.gsflexgrid1.Size(V.Local.width,V.Local.height)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML!frame1.Height,0.929,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.FormXML!frame1.Width,0.015,Variable.Local.X)
+Gui.FormXML.cmdLoad.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML!frame1.Height,0.862,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.FormXML!frame1.Width,0.015,Variable.Local.X)
+Gui.FormXML.txtNonInv.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML!frame1.Height,0.862,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.FormXML!frame1.Width,0.050,Variable.Local.X)
+Gui.FormXML.lbl4.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML!frame1.Height,0.929,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.FormXML!frame1.Width,0.135,Variable.Local.X)
+Gui.FormXML.cmdCreatePrt.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML!frame1.Height,0.929,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.FormXML!frame1.Width,0.015,Variable.Local.X)
+'Gui.FormXML.cmdSD.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML!frame1.Height,0.929,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.FormXML!frame1.Width,0.075,Variable.Local.X)
+Gui.FormXML.cmdRefresh.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML!frame1.Height,0.929,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.FormXML!frame1.Width,0.507,Variable.Local.X)
+'Gui.FormXML.cmdCreateRTR.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML!frame1.Height,0.044,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.FormXML!frame1.Width,0.809,Variable.Local.X)
+Gui.FormXML.lbl5.Position(V.Local.x,V.Local.y)
+Function.Intrinsic.Math.mult(Variable.Screen.FormXML!frame1.Height,0.929,Variable.Local.Y)
+Function.Intrinsic.Math.Mult(Variable.Screen.FormXML!frame1.Width,0.74,Variable.Local.X)
+'Gui.FormXML.lbl6.Position(V.Local.x,V.Local.y)
+F.Intrinsic.Math.Mult(V.Screen.FormXML!frame1.Height,0.862,Variable.Local.Y)
+F.Intrinsic.Math.Mult(V.Screen.formXML!frame1.Width,0.250,V.Local.x)
+Gui.FormXML.frmSource.Position(V.Local.x,V.Local.Y)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("formxml_resize_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3862_FRE_SolidEdge.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(unload)
+Function.Intrinsic.Control.EndIf
+program.sub.formxml_resize.End
+
+program.sub.cmdrefresh_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdrefresh_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iFor.Declare(Long)
+V.Local.iRow.Declare(Long)
+V.Local.sSel.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sParent.Declare(String)
+
+Gui.formBOM.cmdRefresh.Visible(false)
+Gui.formBOM.gsflexgrid1.Visible(false)
+Gui.formBOM.gsflexgrid2.Visible(false)
+Gui.formXML.cmdRefresh.Visible(false)
+Gui.FormXML.gsflexgrid1.Visible(false)
+
+F.Intrinsic.Control.If(V.Args.CONTROLNAME,=,"CMDREFRESH")
+	F.Intrinsic.Control.If(V.Args.SCREEN,=,"FORMXML")
+		'  look for non-inventory parts
+'		F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uBOM!Parent.LBound,V.uGlobal.uBOM!Parent.UBound,1)
+		F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uViewCopy!Parent.LBound,V.uGlobal.uViewCopy!Parent.UBound,1)
+			F.Intrinsic.Math.Add(V.Local.iFor,1,V.Local.iRow)
+'			F.Intrinsic.Control.if(V.uGlobal.uBOM(v.Local.iFor)!NonInv,=,"Y")
+			F.Intrinsic.String.Build("select * from Inventory_Mstr where Part = '{0}' ",V.uGlobal.uViewCopy(v.Local.iFor)!PartNo,V.Local.sSel)
+			F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSel,V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet.Trim,=,"")
+				Gui.FormXML.gsflexgrid1.ApplyStyle(V.Local.iRow,3)
+				Gui.formBOM.gsflexgrid1.ApplyStyle(V.Local.iRow,4)
+			F.Intrinsic.Control.Else
+				Gui.FormXML.gsflexgrid1.ApplyStyle(V.Local.iRow,1)
+				Gui.formBOM.gsflexgrid1.ApplyStyle(V.Local.iRow,1)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iFor)
+
+		F.Intrinsic.String.RPad(V.Screen.FormXML!txtParent.Text," ",17,V.Local.sParent)
+		F.Intrinsic.String.Build("SELECT * FROM INVENTORY_MSTR WHERE PART = '{0}{1}'",V.Local.sParent,V.Screen.FormXML!txtRev.Text,V.Local.sSel)
+		F.ODBC.Connection!Con.OpenLocalRecordsetRO("rst",V.Local.sSel)
+
+		F.Intrinsic.Control.If(V.ODBC.Con!rst.EOF,=,False)
+			Gui.FormXML.txtParent.BackColor(V.Color.White)
+			Gui.FormXML.txtRev.BackColor(V.Color.White)
+			Gui.formXML.txtDescription.BackColor(V.Color.White)
+			Gui.FormXML.txtCat.BackColor(V.Color.White)
+			Gui.FormXML.txtXMLUM.BackColor(V.Color.White)
+			Gui.FormXML.txtSc.BackColor(V.Color.White)
+			Gui.FormXML.txtPL.BackColor(V.Color.White)
+		F.Intrinsic.Control.EndIf
+
+		F.ODBC.Con!rst.Close
+	F.Intrinsic.Control.ElseIf(V.Args.SCREEN,=,"FORMBOM")
+		F.Intrinsic.Control.CallSub(Explodebom)
+		F.Intrinsic.Control.CallSub(Compare)
+		F.Intrinsic.String.RPad(V.Screen.FormBOM!txtParent.Text," ",17,V.Local.sParent)
+		F.Intrinsic.String.Build("SELECT * FROM INVENTORY_MSTR WHERE PART = '{0}{1}'",V.Local.sParent,V.Screen.FormBOM!txtRev.Text,V.Local.sSel)
+		F.ODBC.Connection!Con.OpenLocalRecordsetRO("rst",V.Local.sSel)
+
+		F.Intrinsic.Control.If(V.ODBC.Con!rst.EOF,=,False)
+			Gui.FormBOM.txtParent.BackColor(V.Color.White)
+			Gui.FormBOM.txtRev.BackColor(V.Color.White)
+			Gui.formBOM.txtDescription.BackColor(V.Color.White)
+			Gui.FormBOM.txtCat.BackColor(V.Color.White)
+			Gui.FormBOM.txtUM.BackColor(V.Color.White)
+			Gui.FormBOM.txtSc.BackColor(V.Color.White)
+			Gui.FormBOM.txtPL.BackColor(V.Color.White)
+			Gui.formBOM.txtGSSParent.BackColor(V.Color.White)
+			Gui.formBOM.txtGSSRev.BackColor(V.Color.White)
+			Gui.formBOM.txtGSSDesc.BackColor(V.Color.White)
+			Gui.formBOM.txtGSSCat.BackColor(V.Color.White)
+			Gui.formBOM.txtGSSUM.BackColor(V.Color.White)
+			Gui.formBOM.txtGSSPL.BackColor(V.Color.White)
+			Gui.formBOM.txtGSSSc.BackColor(V.Color.White)
+		F.Intrinsic.Control.EndIf
+
+		F.ODBC.Con!rst.Close
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Gui.formBOM.cmdRefresh.Visible(True)
+Gui.formBOM.gsflexgrid1.Visible(True)
+Gui.formBOM.gsflexgrid2.Visible(True)
+Gui.formXML.cmdRefresh.Visible(True)
+Gui.FormXML.gsflexgrid1.Visible(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdrefresh_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_Inventor_Interface_v01.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdrefresh_click.End
+
+program.sub.gsflexgrid2_cellexit.start
+F.Intrinsic.Control.SetErrorHandler("gsflexgrid2_cellexit_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+' KEY = row, COLUMN = Column, CONTRONAME
+V.Local.sRet.Declare(String)
+V.Local.sRow.Declare(String)
+V.Local.sRet.Set(1)
+V.Local.iElem.Declare(Long)
+
+' will need to update the BDF, if values have changed.  grid starts at 1,udt at 0
+F.Intrinsic.Math.Sub(V.Global.iRow,1,V.Local.iElem)
+F.Intrinsic.Control.If(V.Args.CONTROLNAME,=,"GSFLEXGRID1")
+	F.Intrinsic.Control.If(V.Args.SCREEN,=,"FORMXML")
+		Gui.formXML.gsflexgrid1.Commit
+		Gui.FormXML.gsflexgrid1.GetTextMatrix(V.Global.iColumn,V.Args.KEY,V.Local.sRet)
+		Gui.formXML.gsflexgrid1.ReadRow(V.Args.KEY,V.Local.sRow)
+	F.Intrinsic.Control.ElseIf(V.Args.SCREEN,=,"FORMBOM")
+		Gui.formBOM.gsflexgrid1.Commit
+		Gui.formBOM.gsflexgrid1.GetTextMatrix(V.Global.iColumn,V.Args.KEY,V.Local.sRet)
+		Gui.formBOM.gsflexgrid1.ReadRow(V.Args.KEY,V.Local.sRow)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.SelectCase(V.Global.iColumn)
+' Part Column
+F.Intrinsic.Control.Case(1)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!Parent,V.uGlobal.uViewCopy(v.Local.iElem)!Parent,V.uGlobal.uBOM!PartNo,V.uGlobal.uViewCopy(V.Local.iElem)!PartNo,V.uGlobal.uBOM!PartNo,V.Local.sRet)
+	V.uGlobal.uViewCopy(v.Local.iElem)!PartNo.Set(V.Local.sRet)
+	'need to read row and update.
+	'Everything needs to be updated in the uBOM udt.... not sure why this wasn't done in the update. Once again something that wouldn't have ever worked on delivery
+	F.Intrinsic.String.Split(V.Local.sRow,"*!*",V.Local.sRow)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!Parent,V.uGlobal.uViewCopy(v.Local.iElem)!Parent,V.uGlobal.uBOM!PartNo,V.uGlobal.uViewCopy(V.Local.iElem)!PartNo,V.uGlobal.uBOM!Description,V.Local.sRow(2))
+	V.uGlobal.uViewCopy(v.Local.iElem)!Description.Set(V.Local.sRow(2))
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!Parent,V.uGlobal.uViewCopy(v.Local.iElem)!Parent,V.uGlobal.uBOM!PartNo,V.uGlobal.uViewCopy(V.Local.iElem)!PartNo,V.uGlobal.uBOM!ProdLine,V.Local.sRow(8))
+	V.uGlobal.uViewCopy(v.Local.iElem)!ProdLine.Set(V.Local.sRow(8))
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!Parent,V.uGlobal.uViewCopy(v.Local.iElem)!Parent,V.uGlobal.uBOM!PartNo,V.uGlobal.uViewCopy(V.Local.iElem)!PartNo,V.uGlobal.uBOM!UM,V.Local.sRow(3))
+	V.uGlobal.uViewCopy(v.Local.iElem)!UM.Set(V.Local.sRow(3))
+' Category column
+F.Intrinsic.Control.Case(4)
+	V.uGlobal.uViewCopy(v.Local.iElem)!Category.Set(V.Local.sRet)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!Parent,V.uGlobal.uViewCopy(v.Local.iElem)!Parent,V.uGlobal.uBOM!PartNo,V.uGlobal.uViewCopy(v.Local.iElem)!PartNo,V.uGlobal.uBOM!Category,V.Local.sRet)
+' Source column
+F.Intrinsic.Control.Case(5)
+	V.uGlobal.uViewCopy(v.Local.iElem)!Source.Set(V.Local.sRet)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!Parent,V.uGlobal.uViewCopy(v.Local.iElem)!Parent,V.uGlobal.uBOM!PartNo,V.uGlobal.uViewCopy(v.Local.iElem)!PartNo,V.uGlobal.uBOM!Source,V.Local.sRet)
+' Qty column
+F.Intrinsic.Control.Case(6)
+	V.uGlobal.uViewCopy(v.Local.iElem)!Count.Set(V.Local.sRet.Format*0.0000)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!Parent,V.uGlobal.uViewCopy(v.Local.iElem)!Parent,V.uGlobal.uBOM!PartNo,V.uGlobal.uViewCopy(v.Local.iElem)!PartNo,V.uGlobal.uBOM!Count,V.Local.sRet.Float)
+
+	F.Intrinsic.Control.If(V.Args.CONTROLNAME,=,"GSFLEXGRID1")
+		F.Intrinsic.Control.If(V.Args.SCREEN,=,"FORMXML")
+			Gui.formXML.gsflexgrid1.TextMatrix(V.Global.iColumn,V.Global.iRow,V.Local.sRet.Format*0.0000)
+		F.Intrinsic.Control.ElseIf(V.Args.SCREEN,=,"FORMBOM")
+			Gui.formBOM.gsflexgrid1.TextMatrix(V.Global.iColumn,V.Global.iRow,V.Local.sRet.Format*0.0000)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Case(8)
+	V.uGlobal.uViewCopy(v.Local.iElem)!ProdLine.Set(V.Local.sRet)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uBOM!Parent,V.uGlobal.uViewCopy(v.Local.iElem)!Parent,V.uGlobal.uBOM!PartNo,V.uGlobal.uViewCopy(v.Local.iElem)!PartNo,V.uGlobal.uBOM!ProdLine,V.Local.sRet)
+
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gsflexgrid2_cellexit_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_Inventor_Interface_v01.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.gsflexgrid2_cellexit.End
+
+Program.Sub.selectFile.Start
+F.Intrinsic.Control.SetErrorHandler("selectFile_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sDir.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sType.Declare(String)
+
+' set default dir
+F.Intrinsic.String.Concat(V.Caller.GlobalDir,"\SolidEdge\Export",V.Local.sDIr)
+' open file browser to select file
+F.Intrinsic.UI.ShowOpenFileDialog("","xml|*xml",V.Local.sDIr,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+	F.Intrinsic.Control.CallSub(Unload)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Variable.AddRV("FILE",V.Local.sRet)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("selectFile_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_Inventor_Interface_v01.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.selectFile.End
+
+program.sub.cmdcreateprts_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdcreateprts_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSQl.Declare(String)
+V.Local.iFor.Declare(Long)
+
+Gui.FormBOM.cmdCreatePrts.Enabled(false)
+Gui.FormXML.cmdCreatePrt.Enabled(false)
+
+'loop through and add parts to batch if they don't exist in inventory.
+F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uViewCopy.LBound,V.uGlobal.uViewCopy.uBound,1)
+	F.Intrinsic.String.Build("SELECT * FROM INVENTORY_MSTR WHERE PART = '{0}'",V.uGlobal.uViewCopy(V.Local.iFor)!PartNo,V.Local.sSQL)
+	F.ODBC.Connection!Con.OpenLocalRecordsetRO("rstPart",V.Local.sSQl)
+
+	F.Intrinsic.Control.If(V.ODBC.con!rstPart.EOF,=,True)
+		F.Global.Inventory.AddPartToBatch(V.uGlobal.uViewCopy(v.Local.iFor)!PartNo,V.uGlobal.uViewCopy(v.Local.iFor)!UM,V.uGlobal.uViewCopy(v.Local.iFor)!Description,"",V.uGlobal.uViewCopy(v.Local.iFor)!ProdLine,V.uGlobal.uViewCopy(v.Local.iFor)!Source,V.uGlobal.uViewCopy(v.Local.iFor)!AltDesc1,V.uGlobal.uViewCopy(v.Local.iFor)!AltDesc2,"","UPLOADED")
+	F.Intrinsic.Control.EndIf 
+
+	F.ODBC.Con!rstPart.Close
+F.Intrinsic.Control.Next(V.Local.iFor)
+
+Function.Global.Inventory.PostPartBatch
+
+F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uBOM!NonInv,"")
+F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uViewCopy!NonInv,"")
+
+Gui.FormBOM.cmdCreatePrts.Enabled(True)
+Gui.FormXML.cmdCreatePrt.Enabled(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdcreateprts_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_Inventor_Interface_v01.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+program.sub.cmdcreateprts_click.End
+
+program.sub.gsflexgrid1_mousedown.start
+
+F.Intrinsic.Control.SetErrorHandler("gsflexgrid1_cellenter_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+' KEY = row, COLUMN = Column, CONTRONAME
+V.Local.sRet.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sGSSPart.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sUM.Declare(String)
+V.Local.sPl.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sBrowser.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Set(1)
+
+' will need the Row and Column that was entered, when the cell is exited
+V.Global.iColumn.Set(V.Args.MouseCOL)
+V.Global.iRow.Set(V.Args.Mouserow)
+
+F.Intrinsic.Control.If(V.Args.CONTROLNAME,=,"GSFLEXGRID1")
+	F.Intrinsic.Control.If(V.Args.MouseCOL,=,1)
+	F.Intrinsic.UI.Browser(100,"",V.Local.sPart)
+		F.Intrinsic.Control.If(V.Local.sPart,!=,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sPart,"*!*",V.Local.sPart)
+			F.Intrinsic.String.GSSPartString(V.Local.sPart(0),V.Local.sPart(1),V.Local.sGSSPart)
+			F.Intrinsic.String.Build("Select UM_Inventory,Code_Source  from Inventory_Mstr Left Join Inventory_mst2 on  INventory_mstr.part = Inventory_mst2.Part and Inventory_mstr.location = Inventory_mst2.location where Inventory_mstr.Part = '{0}' and Inventory_mstr.Location = '{1}'",V.Local.sGSSPart,V.Local.sPart(2).Trim,V.Local.sSql)
+			F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSql,V.Local.sUM)
+			F.Intrinsic.String.Split(V.Local.sUM,"*!*",V.Local.sUM)
+			
+			F.Intrinsic.Control.If(V.Args.Screen,=,"FORMBOM")
+				Gui.formBOM.gsflexgrid1.SetActiveCell(9,V.Args.MouseRow)
+				Gui.formBOM.gsflexgrid1.TextMatrix(1,V.Args.MouseRow,V.Local.sGSSPart)
+				Gui.formBOM.gsflexgrid1.TextMatrix(2,V.Args.MouseRow,V.Local.sPart(3))
+				Gui.formBOM.gsflexgrid1.TextMatrix(8,V.Args.MouseRow,V.Local.sPart(4))
+				Gui.formBOM.gsflexgrid1.TextMatrix(3,V.Args.MouseRow,V.Local.sUM(0))
+				Gui.formBOM.gsflexgrid1.TextMatrix(5,V.Args.Mouserow,V.Local.sUM(1))
+				Gui.formBOM.gsflexgrid1.Commit
+			F.Intrinsic.Control.ElseIf(V.Args.Screen,=,"FORMXML")
+				Gui.formXML.gsflexgrid1.SetActiveCell(9,V.Args.MouseRow)
+				Gui.formXML.gsflexgrid1.TextMatrix(1,V.Args.Mouserow,V.Local.sGSSPart)
+				Gui.FormXML.gsflexgrid1.TextMatrix(2,V.Args.Mouserow,V.Local.sPart(3))
+				Gui.FormXML.gsflexgrid1.TextMatrix(8,V.Args.Mouserow,V.Local.sPart(4))
+				Gui.FormXML.gsflexgrid1.TextMatrix(3,V.Args.Mouserow,V.Local.sUM(0))
+				Gui.FormXML.gsflexgrid1.TextMatrix(5,V.Args.MouseRow,V.Local.sUM(1))
+				Gui.FormXML.gsflexgrid1.Commit
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	'PL
+	F.Intrinsic.Control.If(V.Args.MouseCOL,=,8)
+		F.Intrinsic.UI.Browser(130,"",V.Local.sPL)
+		F.Intrinsic.Control.If(V.Local.sPl,!=,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sPl,"*!*",V.Local.sPl)
+			F.Intrinsic.Control.If(V.Args.Screen,=,"FORMBOM")
+				Gui.formBOM.gsflexgrid1.SetActiveCell(9,V.Args.MouseRow)
+				Gui.formBOM.gsflexgrid1.TextMatrix(8,V.Args.MouseRow,V.Local.sPl(0))
+				Gui.formBOM.gsflexgrid1.Commit
+			F.Intrinsic.Control.ElseIf(V.Args.Screen,=,"FORMXML")
+				Gui.formXML.gsflexgrid1.SetActiveCell(9,V.Args.MouseRow)
+				Gui.FormXML.gsflexgrid1.TextMatrix(8,V.Args.Mouserow,V.Local.sPl(0))
+				Gui.FormXML.gsflexgrid1.Commit
+			F.Intrinsic.control.Endif
+
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Args.MouseCOL,=,5)
+		V.Local.sBrowser.Set("P*!*Purchase to Stock&!&J*!*Purchase to Job&!&M*!*Manufacture to Stock&!&F*!*Manufacture to Job&!&C*!*Consign to Stock&!&G*!*Consign to Job")
+		F.Intrinsic.String.Split("Source*!*Description","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("500*!*3000","*!*",V.Local.iWidths)
+		F.Intrinsic.UI.BrowserFromString("Select Source",V.Local.sBrowser,"*!*","&!&",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,!=,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			F.Intrinsic.Control.If(V.Args.Screen,=,"FORMBOM")
+				Gui.formBOM.gsflexgrid1.SetActiveCell(9,V.Args.MouseRow)
+				Gui.formBOM.gsflexgrid1.TextMatrix(5,V.Args.Mouserow,V.Local.sRet(0))
+				Gui.formBOM.gsflexgrid1.Commit
+			F.Intrinsic.Control.ElseIf(V.Args.Screen,=,"FORMXML")
+				Gui.formXML.gsflexgrid1.SetActiveCell(9,V.Args.MouseRow)
+				Gui.FormXML.gsflexgrid1.TextMatrix(5,V.Args.Mouserow,V.Local.sRet(0))
+				Gui.FormXML.gsflexgrid1.Commit
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Args.MouseCOL,=,4)
+		V.Local.sBrowser.Set("P*!*Phantom&!&X*!*Exclude&!&1*!*Setup&!&R*!*Reference&!&N*!*Normal")
+		F.Intrinsic.String.Split("Category*!*Description","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("500*!*3000","*!*",V.Local.iWidths)
+		F.Intrinsic.UI.BrowserFromString("Select Category",V.Local.sBrowser,"*!*","&!&",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,!=,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			F.Intrinsic.Control.If(V.Args.Screen,=,"FORMBOM")
+				Gui.formBOM.gsflexgrid1.SetActiveCell(9,V.Args.MouseRow)
+				Gui.formBOM.gsflexgrid1.TextMatrix(4,V.Args.Mouserow,V.Local.sRet(0))
+				Gui.formBOM.gsflexgrid1.Commit
+			F.Intrinsic.Control.ElseIf(V.Args.Screen,=,"FORMXML")
+				Gui.formXML.gsflexgrid1.SetActiveCell(9,V.Args.MouseRow)
+				Gui.FormXML.gsflexgrid1.TextMatrix(4,V.Args.Mouserow,V.Local.sRet(0))
+				Gui.FormXML.gsflexgrid1.Commit
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gsflexgrid1_cellenter_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_Inventor_Interface_v01.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.gsflexgrid1_mousedown.End
+
+program.sub.txtcat_gotfocus.start
+V.Local.sBrowser.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iWidths.Declare(Long)
+
+Gui.[v.Args.Screen].cmdLoad.SetFocus
+F.Intrinsic.Control.SelectCase(V.Args.ControlName)
+
+	F.Intrinsic.Control.Case("TXTCAT")
+		V.Local.sBrowser.Set("P*!*Phantom&!&X*!*Exclude&!&1*!*Setup&!&R*!*Reference&!&N*!*Normal")
+		F.Intrinsic.String.Split("Category*!*Description","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("500*!*3000","*!*",V.Local.iWidths)
+		F.Intrinsic.UI.BrowserFromString("Select Category",V.Local.sBrowser,"*!*","&!&",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,!=,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			Gui.[v.Args.Screen].txtCat.text(v.Local.sRet(0))
+		F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Case("TXTSC")
+		V.Local.sBrowser.Set("P*!*Purchase to Stock&!&J*!*Purchase to Job&!&M*!*Manufacture to Stock&!&F*!*Manufacture to Job&!&C*!*Consign to Stock&!&G*!*Consign to Job")
+		F.Intrinsic.String.Split("Source*!*Description","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("500*!*3000","*!*",V.Local.iWidths)
+		F.Intrinsic.UI.BrowserFromString("Select Source",V.Local.sBrowser,"*!*","&!&",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,!=,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			Gui.[v.Args.Screen].txtSC.text(v.Local.sRet(0))
+		F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Case("TXTPL")
+		F.Intrinsic.UI.Browser(130,"",V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,!=,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			Gui.[v.Args.Screen].txtPL.text(v.Local.sRet(0))
+		F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.EndSelect
+
+
+program.sub.txtcat_gotfocus.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$12:00:00 AM$}$False
+Program.Sub.Comments.End
